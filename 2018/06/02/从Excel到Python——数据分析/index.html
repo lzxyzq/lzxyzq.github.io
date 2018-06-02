@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="浪子心游子情">
 <meta property="og:description" content="摘要Excel是数据分析中最常用的工具，本系列文章摘自蓝鲸老师的新书以及自己的一些扩充，该书通过Python与Excel的功能对比介绍如何使用Python通过函数式编程完成Excel中的数据处理及分析工作。在Python中pandas库用于数据处理，从1787页的pandas官网文档中总结出最常用的36个函数，通过这些函数介绍如何通过Python完成数据生成和导入、数据清洗、预处理，以及最常见的数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-02T11:59:42.050Z">
+<meta property="og:updated_time" content="2018-06-02T12:20:42.021Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从Excel到Python——数据分析">
 <meta name="twitter:description" content="摘要Excel是数据分析中最常用的工具，本系列文章摘自蓝鲸老师的新书以及自己的一些扩充，该书通过Python与Excel的功能对比介绍如何使用Python通过函数式编程完成Excel中的数据处理及分析工作。在Python中pandas库用于数据处理，从1787页的pandas官网文档中总结出最常用的36个函数，通过这些函数介绍如何通过Python完成数据生成和导入、数据清洗、预处理，以及最常见的数">
@@ -354,24 +354,30 @@
 <h2 id="数据清洗"><a href="#数据清洗" class="headerlink" title="数据清洗"></a>数据清洗</h2><p>对数据表中的问题进行清洗。主要内容包括对空值，大小写问题，数据格式和重复值的处理。这里不包含对数据间的逻辑验证。</p>
 <h3 id="处理空值-删除或填充"><a href="#处理空值-删除或填充" class="headerlink" title="处理空值(删除或填充)"></a>处理空值(删除或填充)</h3><p>在创建数据表的时候在price字段中故意设置了几个NA值。对于空值的处理方式有很多种，可以直接删除包含空值的数据，也可以对空值进行填充，比如用0填充或者用均值填充。还可以根据不同字段的逻辑对空值进行推算。</p>
 <ul>
-<li><p>Excel中可以通过“查找和替换”功能对空值进行处理，将空值统一替换为0或均值。也可以通过“定位”空值来实现。</p>
-</li>
-<li><p>Python中处理空值的方法比较灵活，可以使用Dropna函数用来删除数据表中包含空值的数据，也可以使用fillna函数对空值进行填充。</p>
-</li>
-</ul>
-<p>Parameters:</p>
-<blockquote>
+<li>Excel中可以通过“查找和替换”功能对空值进行处理，将空值统一替换为0或均值。也可以通过“定位”空值来实现。</li>
+<li>Python中处理空值的方法比较灵活，可以使用Dropna函数用来删除数据表中包含空值的数据，也可以使用fillna函数对空值进行填充。<br>Parameters:<blockquote>
 <p>axis : {0 or ‘index’, 1 or ‘columns’}, default 0</p>
-<ul>
+</blockquote>
+</li>
 <li>0, or ‘index’ : 删掉包含空值的行</li>
-<li>1, or ‘columns’ : 删掉包含空值的列<br>how : {‘any’, ‘all’}, default ‘any’</li>
+<li>1, or ‘columns’ : 删掉包含空值的列<blockquote>
+<p>how : {‘any’, ‘all’}, default ‘any’</p>
+</blockquote>
+</li>
 <li>any: 有NA，删掉行或列</li>
-<li>all：所有值为NA，删掉行或列<br>thresh : int, optional</li>
-<li>需要非空值限制<br>df.dropna(thresh=2)<br>Keep only the rows with at least 2 non-NA values.<br>inplace :bool, default False</li>
+<li>all：所有值为NA，删掉行或列<blockquote>
+<p>thresh : int, optional</p>
+</blockquote>
+</li>
+<li>需要非空值限制  </li>
+<li>df.dropna(thresh=2)</li>
+<li>Keep only the rows with at least 2 non-NA values.<blockquote>
+<p>inplace :bool, default False</p>
+</blockquote>
+</li>
 <li>Keep the DataFrame with valid entries in the same variable.</li>
 <li>df.dropna(inplace=True)</li>
 </ul>
-</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#删除数据表中含有空值的行</span><br><span class="line">df.dropna()</span><br><span class="line">Out[16]: </span><br><span class="line">     id       date         city category  age   price</span><br><span class="line">0  1001 2013-01-02     Beijing     100-A   23  1200.0</span><br><span class="line">2  1003 2013-01-04   guangzhou     110-A   54  2133.0</span><br><span class="line">3  1004 2013-01-05     Shenzhen    110-C   32  5433.0</span><br><span class="line">5  1006 2013-01-07     BEIJING     130-F   32  4432.0</span><br></pre></td></tr></table></figure>
 <p>除此之外也可以使用数字对空值进行填充，下面的代码使用fillna函数对空值字段填充数字0。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#使用数字0填充数据表中空值</span><br><span class="line">df.fillna(value=0)</span><br></pre></td></tr></table></figure>
@@ -472,7 +478,7 @@
         <p><span>本文标题:</span><a href="/2018/06/02/从Excel到Python——数据分析/">从Excel到Python——数据分析</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Yue Dandy 的个人博客">Yue Dandy</a></p>
         <p><span>发布时间:</span>2018年06月02日 - 19时20分</p>
-        <p><span>最后更新:</span>2018年06月02日 - 19时59分</p>
+        <p><span>最后更新:</span>2018年06月02日 - 20时20分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/06/02/从Excel到Python——数据分析/" title="从Excel到Python——数据分析">http://github.com/lzxyzq/2018/06/02/从Excel到Python——数据分析/</a>
             <span class="copy-path" data-clipboard-text="原文: http://github.com/lzxyzq/2018/06/02/从Excel到Python——数据分析/　　作者: Yue Dandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
