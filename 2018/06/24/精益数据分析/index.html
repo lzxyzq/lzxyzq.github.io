@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>精益数据分析 | 浪子心游子情</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言：不是销售你能创造的产品，而是制造你能卖出去的产品。彼得德鲁克有句名言：if you can’t measure it, you can’t manage it.">
+<meta name="keywords" content="数据分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="精益数据分析">
+<meta property="og:url" content="http://github.com/lzxyzq/2018/06/24/精益数据分析/index.html">
+<meta property="og:site_name" content="浪子心游子情">
+<meta property="og:description" content="前言：不是销售你能创造的产品，而是制造你能卖出去的产品。彼得德鲁克有句名言：if you can’t measure it, you can’t manage it.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-25T09:02:48.098Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="精益数据分析">
+<meta name="twitter:description" content="前言：不是销售你能创造的产品，而是制造你能卖出去的产品。彼得德鲁克有句名言：if you can’t measure it, you can’t manage it.">
+  
+    <link rel="alternative" href="/atom.xml" title="浪子心游子情" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: true
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Yue Dandy</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">精于心 简于形</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="https://lzxyzq.github.io/">博客首页</a></li>
+                        
+                            <li><a href="https://lzxyzq.github.io/">作品展示</a></li>
+                        
+                            <li><a href="https://www.zhihu.com/pub/">静心阅读</a></li>
+                        
+                            <li><a href="https://www.vmovier.com/53766">光影之路</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="/" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/lzxyzq/" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="#" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="#" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                            
+                                <a class="fl Instagram" target="_blank" href="#" title="Instagram">Instagram</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/数据分析/" style="font-size: 20px;">数据分析</a> <a href="/tags/文件/" style="font-size: 10px;">文件</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/lzxyzq/">Github</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://mp.weixin.qq.com/s?__biz=MzI4MzAxNDQ1Mw==&mid=207493606&idx=3&sn=a85753ccfc195c50a0e509ff0add0850#rd">公众号</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">侦探🕵️迷、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Yue Dandy</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Yue Dandy</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">精于心 简于形</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="https://lzxyzq.github.io/">博客首页</a></li>
+                
+                    <li><a href="https://lzxyzq.github.io/">作品展示</a></li>
+                
+                    <li><a href="https://www.zhihu.com/pub/">静心阅读</a></li>
+                
+                    <li><a href="https://www.vmovier.com/53766">光影之路</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="/" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/lzxyzq/" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="#" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+                    
+                        <a class="linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                    
+                        <a class="Instagram" target="_blank" href="#" title="Instagram">Instagram</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-精益数据分析" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/06/24/精益数据分析/" class="article-date">
+      <time datetime="2018-06-24T09:20:35.000Z" itemprop="datePublished">2018-06-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      精益数据分析
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/读书笔记/">读书笔记</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据分析/">数据分析</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong>前言</strong>：不是销售你能创造的产品，而是制造你能卖出去的产品。<br><strong>彼得德鲁克有句名言</strong>：if you can’t measure it, you can’t manage it.</p>
+<a id="more"></a>
+<h2 id="精益数据分析基本方法"><a href="#精益数据分析基本方法" class="headerlink" title="精益数据分析基本方法"></a>精益数据分析基本方法</h2><h3 id="基本的分析概念"><a href="#基本的分析概念" class="headerlink" title="基本的分析概念"></a>基本的分析概念</h3><ul>
+<li>定性数据：杂乱的、主观的、不精确的，吸纳主观因素</li>
+<li>定量数据：跟踪和衡量的数字，排斥主观因素</li>
+<li>最小可行化产品：足以向市场传达你所主张的价值最小化产品</li>
+</ul>
+<h3 id="8个需要提防的虚荣数据指标（模式）"><a href="#8个需要提防的虚荣数据指标（模式）" class="headerlink" title="8个需要提防的虚荣数据指标（模式）"></a>8个需要提防的虚荣数据指标（模式）</h3><ul>
+<li>点击量。——更应统计点击的人数</li>
+<li>页面浏览量（PV值）。——除非商业模式是展示广告直接与PV挂钩，否则更应统计（访问的）人数。</li>
+<li>访问量。—— 100访问量是一个人访问了100次的用户，还是100个访问了一次的用户。</li>
+<li>独立访客数。——只知有多少人访问了网页，不知做什么，为什么停留，是否离开了。</li>
+<li>粉丝/好友/赞的数量。——在社交平台上振臂一呼，有多少粉丝会响应，知道这个数字才有意义。</li>
+<li>网站停留时间/浏览页数。——两个指标代替客户参与度活活跃度不明智。如在投诉页停留了很长的时间。</li>
+<li>收集到的用户邮件地址数量。——先向一部分注册用户发送测试邮件，看是否按照邮件提示的去做。</li>
+<li>下载量。——可能影响商店的排行，但更需要了解，应用下载后的激活量、账户创建量。</li>
+</ul>
+<h3 id="数据测试方法：市场细分、同期群分析、A-B测试和多变量分析"><a href="#数据测试方法：市场细分、同期群分析、A-B测试和多变量分析" class="headerlink" title="数据测试方法：市场细分、同期群分析、A/B测试和多变量分析"></a>数据测试方法：市场细分、同期群分析、A/B测试和多变量分析</h3><p>测试是精益数据分析的灵魂。通常，测试就是通过市场细分、同期群分析或A／B测试来比较两个样本的不同。</p>
+<ul>
+<li><strong>细分市场</strong>：细分市场就是一群拥有某种共同特征的人。你需要根据一系列的技术、人口信息对访客进行细分，然后比较各个细分市场之间的差异。</li>
+<li><strong>同期群分析</strong>：比较的是相似群体随时间的变化。产品会随着你的开发和测试而不断迭代，这就导致在产品发布第一周就加入的用户和后来才加入的用户有着不同的体验。</li>
+<li><strong>A／B测试和多变量测试：</strong><br>A／B测试：假设其他条件保持不变，仅考虑体验中的某一属性对被试用户的影响。<br>多变量分析法：同时改动产品的多个方面，看哪个与结果的相关性最大。</li>
+</ul>
+<p>A／B测试看似简单易行，实则有一个软肋——只有用户流量巨大的大型网站（如微软必应、谷歌）能对单一的因素（如链接颜色、网页速度）进行测试并迅速得到答案。如果没有庞大的用户流量，你将需要测试很多因素。这可能包括网页的色调，触发用户行为的链接文字，图片效果等。</p>
+<p><strong>同期群分析eg</strong>:<br>假设你经营着一家网店。你每月能获取1000位新客户，他们每人都会买一些东西。如下图所示前五个月中平均每位客户带来的营收。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>1月</th>
+<th>2月</th>
+<th>3月</th>
+<th>4月</th>
+<th>5月</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>客户总数</td>
+<td>1000</td>
+<td>2000</td>
+<td>3000</td>
+<td>4000</td>
+<td>5000</td>
+</tr>
+<tr>
+<td>平均每位客户营收</td>
+<td>5美元</td>
+<td>4.5美元</td>
+<td>4.33美元</td>
+<td>4.25美元</td>
+<td>4.5美元</td>
+</tr>
+</tbody>
+</table>
+<p>从这个表格中，我们是否可以看出网店的生意究竟是日益红火还是每况愈下？这并不容易回答，这个表格中，新客户和5个月前注册的老客户的数据是混在一起的，没有对比新客户和老客户的表现。</p>
+<p>我们调整为根据用户在网店上的“店龄”来划分数据。如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>同期群</th>
+<th>使用月份</th>
+<th>使用月份</th>
+<th>使用月份</th>
+<th>使用月份</th>
+<th>使用月份</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr>
+<td>1月</td>
+<td>5美元</td>
+<td>3美元</td>
+<td>2美元</td>
+<td>1美元</td>
+<td>0.5美元</td>
+</tr>
+<tr>
+<td>2月</td>
+<td>6美元</td>
+<td>4美元</td>
+<td>2美元</td>
+<td>1美元</td>
+</tr>
+<tr>
+<td>3月</td>
+<td>7美元</td>
+<td>6美元</td>
+<td>5美元</td>
+</tr>
+<tr>
+<td>4月</td>
+<td>8美元</td>
+<td>7美元</td>
+</tr>
+<tr>
+<td>5月</td>
+<td>9美元</td>
+</tr>
+<tr>
+<td>平均值</td>
+<td>7美元</td>
+<td>5美元</td>
+<td>3美元</td>
+<td>1美元</td>
+<td>0.5</td>
+</tr>
+</tbody>
+</table>
+<p>根据表2，我们可以看出，前几个月中用户变现的疲软表现已经损害到了网店营收指标的总体状况。1月份的同期群首页消费了5美元，然后逐月递减，到第五个月消费0.5美元。不过，随着网站的发展，新客户的首月话费有显著增长，接下来的消费下降趋势也有所缓解：4月份的同期群在首月消费8美元，次月消费7美元。</p>
+<p>如果只看表1，网店的发展似乎进入了瓶颈，但经过同期群分析得出，实际上网店正在茁壮成长。而且，我们还明白了值得关注的关键数据：在首月注册消费后，客户消费的递减量。</p>
+<h3 id="什么是好的数据指标："><a href="#什么是好的数据指标：" class="headerlink" title="什么是好的数据指标："></a>什么是好的数据指标：</h3><ul>
+<li><strong>好的数据指标是比较性的</strong>。通过比较某数据指标在不同的时间段、用户群体、竞争产品之间的表现，可以更好地洞察产品的实际走向。</li>
+<li><strong>好的数据指标是简单易懂的</strong>。数据指标需要很容易地记住或讨论某指标。</li>
+<li><strong>好的数据指标是一个比率</strong>。通过查看比率就可对项目基本状况作出判断。</li>
+</ul>
+<h3 id="探索正确数据指标的五点注意："><a href="#探索正确数据指标的五点注意：" class="headerlink" title="探索正确数据指标的五点注意："></a>探索正确数据指标的五点注意：</h3><ul>
+<li><strong>定性指标与定量指标</strong>：定性回答“是什么”，定量回答“是多少”。</li>
+<li><strong>虚荣指标与可辅助行动的指标</strong>：虚荣指标看上去很美很良好，却不能对项目分析产生丝毫帮助。相反，可付诸行动指标可以帮助选择行动方案，从而指导商业行为。</li>
+<li><strong>探索性指标与报告性指标</strong>：探索性指标是推测性数据，提供对于未知的洞见，帮助在市场中取得先手优势。报告性指标关注日常数据。</li>
+<li><strong>先见性指标与后见性指标</strong>：先见性指标用于预见未来；后见性指标用于解释过去。</li>
+</ul>
+<p>先见性指标可用于预测未来。比如投诉量这个数据指标，如果投诉量增加，很有可能更多的客户会停用你的产品或服务，作为一个先见性指标，客户投诉还能帮你深入了解产品和服务的真实状况，分析投诉量上升的原因，然后解决问题。</p>
+<p>后见性指标能提示问题的存在。比如用户流失，不过等到你有机会收集数据，找出问题，往往为时已晚，已流失的用户不会再回头，但是可以通过分析问题避免新的流失。</p>
+<ul>
+<li><strong>相关性指标与因果性指标</strong>：如果两个指标总是一同变化，则说明它们是相关的；如果一个指标可导致另一个指标的变化，则说明它们是因果关系。</li>
+</ul>
+<p><strong>发现相关性可以帮助你预测未来，而发现因果关系意味着你可以改变未来。但仅仅关注单一的关联而不追溯因果关系会导致错误的决定。</strong></p>
+<blockquote>
+<p>举个例子——在加拿大，冬季轮胎的使用率和交通事故的减少量是一对相关数据。人们会在寒冷的冬季换上更软的冬季轮胎，而夏天是交通事故的高发季。这是否意味着我们应该要求加拿大的司机一年司机都装着冬季轮胎？当然不是，因为软轮胎在夏天的刹车性能很差，会导致事故量增加。所以，冬季轮胎的使用率和交通事故的减少量之间的相关性，可以帮助我们预测未来，但是对于决策的价值则有限。</p>
+</blockquote>
+<blockquote>
+<p>在加拿大夏天交通事故增加的例子中，酒精消费量、新手司机数量、白昼变长和暑假等因素与交通事故增加具有一定的因果关系。通过对因果关系的分析，确定调整策略。</p>
+</blockquote>
+<p><strong>相关性很好，因果性更佳。有时候，你只能找到一些相关性，但你永不应停止寻找因果性</strong></p>
+<h3 id="数据分析框架："><a href="#数据分析框架：" class="headerlink" title="数据分析框架："></a>数据分析框架：</h3><h4 id="阿什·莫瑞亚的精益创业画布"><a href="#阿什·莫瑞亚的精益创业画布" class="headerlink" title="阿什·莫瑞亚的精益创业画布"></a><strong>阿什·莫瑞亚的精益创业画布</strong></h4><table>
+<thead>
+<tr>
+<th>模块</th>
+<th>相关指标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>问题</td>
+<td>调查对象中具有该需求的人数，知道自己具有该需求的人数</td>
+</tr>
+<tr>
+<td>解决方案</td>
+<td>调查对象中试用了最小可行化产品的人数、用户参与度、流失率、最常被使用的/最不常被使用的功能、愿意付费使用的人数</td>
+</tr>
+<tr>
+<td>独家卖点</td>
+<td>用户反馈得分、第三方独立评分、情感分析、客户如何描述你的产品、调查问卷、搜索、调研、以及竞争分析</td>
+</tr>
+<tr>
+<td>客户群体分类</td>
+<td>在该群体中找到潜在客户的难易程度，独特的搜索关键字，从特定源头导入的精准渠道流量</td>
+</tr>
+<tr>
+<td>渠道</td>
+<td>每个渠道可导入的销售线索及客户量、病毒式传播系数和病毒传播周期、净推介值、打开率、利润率、点入率、网页排名、消息到达率</td>
+</tr>
+<tr>
+<td>门槛优势</td>
+<td>调查对象对独特卖点的理解、专利、品牌价值、进入壁垒、新入口的数量、独家“关系”</td>
+</tr>
+<tr>
+<td>营收分析</td>
+<td>客户终生价值，每个用户平均收入（ARPU），转化率，购物车大小，点入率</td>
+</tr>
+<tr>
+<td>成本分析</td>
+<td>固定成本，客户获取成本，服务第n名客户的成本，客服成本，关键字广告成本</td>
+</tr>
+</tbody>
+</table>
+<h4 id="戴夫·麦克卢尔的“海盗指标”即AARRR模型"><a href="#戴夫·麦克卢尔的“海盗指标”即AARRR模型" class="headerlink" title="戴夫·麦克卢尔的“海盗指标”即AARRR模型"></a><strong>戴夫·麦克卢尔的“海盗指标”即AARRR模型</strong></h4><p><strong>AARRR模型</strong>：获取用户（Acquisition）、提高活跃度（Activation）、提高留存率（Retention）、获取收入（Revenue）、自传播（Refer）</p>
+<p><strong>AARRR模型各指标与对应的KPI：</strong></p>
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>功用</th>
+<th>相关指标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>获取用户</td>
+<td>通过各种各样的手段博取眼球，无论是免费还是付费的方式</td>
+<td>流量、提及量、cpc(每次点击费用)、搜索结果、用户获取成本、点开率</td>
+</tr>
+<tr>
+<td>提高活跃度</td>
+<td>将获取的“过客”式访客转化为产品的真正参与者</td>
+<td>注册人数、注册量、新手教程完成量、至少用过一次产品的人数、订阅量</td>
+</tr>
+<tr>
+<td>提高留存率</td>
+<td>说服用户再次光临，反复使用，表现出粘性行为</td>
+<td>用户参与度、距上次登录的时间、日/月活跃使用量、流失率</td>
+</tr>
+<tr>
+<td>获取营收</td>
+<td>商业活动的产出（不同的商业模式看中不同的产出，如购买量、广告点击量、内容生产量、订阅量，等等）</td>
+<td>客户终生价值，（免费到付费）转化率，平均购物车大小，广告点入营收</td>
+</tr>
+<tr>
+<td>自传播</td>
+<td>已有用户对潜在用户的病毒式传播及口碑传播</td>
+<td>邀请发送量、病毒式传播、病毒传播周期</td>
+</tr>
+</tbody>
+</table>
+<h4 id="埃里克·莱斯创业增长三大引擎"><a href="#埃里克·莱斯创业增长三大引擎" class="headerlink" title="埃里克·莱斯创业增长三大引擎"></a><strong>埃里克·莱斯创业增长三大引擎</strong></h4><p><strong>黏着式增长引擎、病毒式增长引擎、付费式增长引擎</strong><br><strong>三种增长引擎与对应的KPI:</strong></p>
+<table>
+<thead>
+<tr>
+<th>增长引擎</th>
+<th>功用</th>
+<th>相关指标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>粘性式增长引擎</td>
+<td>让用户成为回头客，并且持续使用你的产品</td>
+<td>用户参与度、客户留存率、流失率、使用频率、距离上次登录的时间</td>
+</tr>
+<tr>
+<td>病毒式增长模式</td>
+<td>让声明传播出去</td>
+<td>病毒式传播系数、病毒传播周期、用户完成一次邀请所需的时间、病毒性的类别</td>
+</tr>
+<tr>
+<td>付费式增长引擎</td>
+<td>付费</td>
+<td>客户终生价值（CLV）、客户获取成本（CAC）、客户盈亏平衡时间</td>
+</tr>
+</tbody>
+</table>
+<p><strong>客户盈亏平衡时间</strong>：你收回获取一位客户的成本所需的时间</p>
+<h4 id="肖恩·埃利斯的创业增长金字塔"><a href="#肖恩·埃利斯的创业增长金字塔" class="headerlink" title="肖恩·埃利斯的创业增长金字塔"></a><strong>肖恩·埃利斯的创业增长金字塔</strong></h4><p><strong>创业增长金字塔</strong>（增长黑客的由来）</p>
+<p>规模增长：踩住油门，加速占领新的市场、产品及渠道</p>
+<p>理清思路：找到一个可防御的、高壁垒的竞争优势、并进一步巩固</p>
+<p>产品与市场相契合：决定你该把什么卖给谁，并证明</p>
+<h3 id="第一关键指标（OMTM：One-Metric-That-Matters）："><a href="#第一关键指标（OMTM：One-Metric-That-Matters）：" class="headerlink" title="第一关键指标（OMTM：One Metric That Matters）："></a>第一关键指标（OMTM：One Metric That Matters）：</h3><p>数据是庞杂的，数据的形式可能是无规则、无组织的，甚至有的单一的数据并没有实际的意义。我们日常所做的大部分数据统计工作只是将数据进行统计和存储，以供日后需要所用。</p>
+<p>而对于数据分析而言，我们需要聚焦于能够指导实践的数据信息——如你的KPI这些核心数据上进行跟踪和分析。如何让自己保持注意力在产品的核心数据上，让自己在正确的时间树立正确的目标，用正确的方法做正确的事情。第一关键指标（OMTM）就是一个很好的方法。</p>
+<p>第一关键指标是书中的重点，第一关键指标就是一个在当前阶段高于一切、需要你集中全部注意力的数字。在问题验证阶段关心客户众生价值并没有什么意义，但当你接近产品与时长契合的时候，它可能就是你的专注点。</p>
+<p>在项目进行的不同阶段，我们都可以总结出一个高于一切的数据指标并时刻关注，并通过各种方法来提高这个“第一关键指标”。使用第一关键指标可以在实际工作中解决许多问题：</p>
+<ul>
+<li>回答了现阶段最重要的问题</li>
+<li>促使你得出初始基线并建立清晰的目标</li>
+<li>关注的是整个公司层面的健康</li>
+<li>鼓励一种实验文化</li>
+</ul>
+<p>依据第一关键指标的理论，引出基本的精益数据分析方法：</p>
+<ul>
+<li>按照当前状况选择第一关键指标</li>
+<li>找到提升第一关键指标的途径</li>
+<li>将产品改善方案进行测试</li>
+<li>根据数据反馈结果进行决策</li>
+</ul>
+<p><strong>在实际的不同项目与时机情况下，会产生不同的衍生精益数据分析方法，接下来从六种商业模式以及五个创业阶段这两个角度进行了详细的讲解。</strong></p>
+<h2 id="六种商业模式下的数据分析"><a href="#六种商业模式下的数据分析" class="headerlink" title="六种商业模式下的数据分析"></a>六种商业模式下的数据分析</h2><p>商业模式和创业阶段决定了你所关注的数据指标。</p>
+<ul>
+<li>不同的商业模式关注的数据指标是不同的，比如一个电子商务平台和一个UGC平台所关注的数据指标是不同的，电子商务平台更关心购买转化率，UGC平台更关心用户活跃度内容输出的频次。</li>
+<li>不同创业阶段公司所关心的数据指标也是不同的。比如在创业早期阶段，更关心的是如何获取用户，让用户使用你的产品；而当获取到一定的用户量并且保持了一定的活跃度后，这个阶段关心的就是营收，如何赚钱。</li>
+</ul>
+<h3 id="商业模式"><a href="#商业模式" class="headerlink" title="商业模式"></a>商业模式</h3><p>商业模式是什么？商业模式是让人们做你希望他们做并能使你从中获利的事。</p>
+<p>为什么要了解商业模式？因为你的赚钱方式决定了你应关注的指标。</p>
+<p>我们可以将商业模式归为6大类——<strong>电子商务、SaaS、免费移动应用、媒体网站、UGC、双边市场</strong>。</p>
+<p>每类商业模式应关注的指标如下：</p>
+<h4 id="电子商务要关注的指标及对应的指标基准"><a href="#电子商务要关注的指标及对应的指标基准" class="headerlink" title="电子商务要关注的指标及对应的指标基准"></a>电子商务要关注的指标及对应的指标基准</h4><table>
+<thead>
+<tr>
+<th>数据指标</th>
+<th>指标含义 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>转化率</td>
+<td>访客中发生购买行为的比例</td>
+</tr>
+<tr>
+<td>年均购买率</td>
+<td>每位买家的平均购买次数</td>
+</tr>
+<tr>
+<td>平均购物车大小</td>
+<td>弃买率 </td>
+</tr>
+<tr>
+<td>客户获取成本</td>
+<td>获取一位客户所需的平均成本</td>
+</tr>
+<tr>
+<td>平均每位客户营收</td>
+<td>平均每位客户终其一生在该网站消费的总金额</td>
+</tr>
+<tr>
+<td>导入流量最多的关键字</td>
+<td>大家都在搜的且与你有关的词汇，同时也有助于了解相邻产品或市场</td>
+</tr>
+<tr>
+<td>热门搜索词</td>
+<td>既包括能带来营收的词汇，也包括没能带来任何结果的词汇</td>
+</tr>
+<tr>
+<td>推荐引擎有效性</td>
+<td>买家将推荐商品加入购物车的可能性</td>
+</tr>
+<tr>
+<td>病毒性</td>
+<td>口碑，以及平均每个访问量带来的分享次数</td>
+</tr>
+<tr>
+<td>邮件列表有效性</td>
+<td>邮件中链接的点击率，以及招揽回头客的能力</td>
+</tr>
+</tbody>
+</table>
+<h4 id="SaaS要关注指标及基准"><a href="#SaaS要关注指标及基准" class="headerlink" title="SaaS要关注指标及基准"></a>SaaS要关注指标及基准</h4><table>
+<thead>
+<tr>
+<th>数据指标</th>
+<th>指标含义</th>
+<th>基准</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>眼球</td>
+<td>网站吸引访客的效果如何</td>
+<td></td>
+</tr>
+<tr>
+<td>参与度</td>
+<td>有多少访客注册成为了免费版或试用版的用户</td>
+<td></td>
+</tr>
+<tr>
+<td>黏性</td>
+<td>有多少客户真正在使用你的产品</td>
+<td></td>
+</tr>
+<tr>
+<td>转户率</td>
+<td>有多少免费的用户最终成为了付费用户</td>
+<td></td>
+</tr>
+<tr>
+<td>平均每位客户营收</td>
+<td>单位时间内平均每位客户带来的营收</td>
+<td></td>
+</tr>
+<tr>
+<td>客户获取成本</td>
+<td>获取一位付费客户的所需成本</td>
+<td></td>
+</tr>
+<tr>
+<td>病毒性</td>
+<td>客户邀请他人或他人推荐公司产品的可能性以及所需时间</td>
+<td></td>
+</tr>
+<tr>
+<td>追加销售</td>
+<td>是什么促使客户支付更多费用，以及这种情况的发生频率</td>
+<td></td>
+</tr>
+<tr>
+<td>系统正常运行时间和可靠性</td>
+<td>公司会面临多少用户投诉、问题升级或服务争端问题</td>
+<td></td>
+</tr>
+<tr>
+<td>流失率</td>
+<td>单位时间内流失的用户和付费客户人数</td>
+<td>早起流失率在5%以下；后期流失率应降到2%以下</td>
+</tr>
+<tr>
+<td>终身价值</td>
+<td>客户使用产品期间的付费总额</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="免费移动应用要关注的指标及基准"><a href="#免费移动应用要关注的指标及基准" class="headerlink" title="免费移动应用要关注的指标及基准"></a>免费移动应用要关注的指标及基准</h4><table>
+<thead>
+<tr>
+<th>数据指标</th>
+<th>指标含义</th>
+<th>基准</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>下载量</td>
+<td>应用的已下载数量</td>
+<td>初始应用下载大小达到50M以下来最小化下载流失率</td>
+</tr>
+<tr>
+<td>客户获取成本（CAC）</td>
+<td>获取以为用户和付费客户的所需成本</td>
+<td>为每个付费安装支付0.5美元，为每个正常的自然用户花费2.5美元，但是要确保总体的获取成本低于每用户0.75</td>
+</tr>
+<tr>
+<td>应用运行率</td>
+<td>有多少下载用户真正开启了该项应用，并注册了账户</td>
+<td></td>
+</tr>
+<tr>
+<td>活跃用户/玩家比例</td>
+<td>DAU/MAU</td>
+</tr>
+<tr>
+<td>付费用户率</td>
+<td>有多少用户曾支付过费用</td>
+<td>对于免费增值模式而言，从免费到付费的转化率要达到2%以上；对于一个有应用内购买项目的移动应用或游戏，要假设有大约1.5%的用户会付款购买</td>
+</tr>
+<tr>
+<td>用户平均每月营收（ARPU）</td>
+<td>购买和广告的收入总和</td>
+<td>指标的好坏与游戏的种类高度相关，但要以APPDAU（每日活跃用户的平均营收）高于0.05美元为底线目标</td>
+</tr>
+<tr>
+<td>点击率</td>
+<td>在应用商店为应用评分或评论的用户比例</td>
+<td>付费应用评分率少于1.5%；免费应用评分率少于1%</td>
+</tr>
+<tr>
+<td>病毒性</td>
+<td>平均每位用户可以邀请多少新用户</td>
+<td></td>
+</tr>
+<tr>
+<td>流失率</td>
+<td>卸载应用或一定时间段内没有开启过应用的用户比例</td>
+<td></td>
+</tr>
+<tr>
+<td>客户终生价值</td>
+<td>用户在使用期间为公司贡献的营收</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="媒体网站要关注的指标及基准"><a href="#媒体网站要关注的指标及基准" class="headerlink" title="媒体网站要关注的指标及基准"></a>媒体网站要关注的指标及基准</h4><table>
+<thead>
+<tr>
+<th>数据指标</th>
+<th>指标含义</th>
+<th>基准</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>访问与流失率</td>
+<td>访客人数及忠诚度</td>
+<td></td>
+</tr>
+<tr>
+<td>广告库存</td>
+<td>可供变现的广告展示次数</td>
+<td></td>
+</tr>
+<tr>
+<td>广告价格</td>
+<td>通过广告展示次数而获得的收入</td>
+<td></td>
+</tr>
+<tr>
+<td>点击率</td>
+<td>真正点击广告的访客比例</td>
+<td>多数种类的站内广告会获得0.5%～2%的点击率；如果低于0.08%，你一定犯了可怕的错误</td>
+</tr>
+<tr>
+<td>内容与广告间的平衡</td>
+<td>实现广告库存与媒体内容的平衡，以最大化网站的总体性能</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="UCG要关注的指标及基准"><a href="#UCG要关注的指标及基准" class="headerlink" title="UCG要关注的指标及基准"></a>UCG要关注的指标及基准</h4><table>
+<thead>
+<tr>
+<th>数据指标</th>
+<th>指标含义</th>
+<th>基准</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>活跃访客数</td>
+<td>访客回访频率，以及每次来访的停留时间</td>
+<td></td>
+</tr>
+<tr>
+<td>内容生成</td>
+<td>以某种方式与内容进行互动的访客比例，包括生成内容以及顶/踩行为等</td>
+<td></td>
+</tr>
+<tr>
+<td>参与度漏斗的变化</td>
+<td>网站是否有效地增加了用户参与度</td>
+<td></td>
+</tr>
+<tr>
+<td>生成内容的价值</td>
+<td>内容的商业价值</td>
+<td></td>
+</tr>
+<tr>
+<td>内容分享和病毒性</td>
+<td>内容如何被分享的，分享又是如何有利于网站发展的</td>
+<td></td>
+</tr>
+<tr>
+<td>消息提醒的有效性</td>
+<td>看到推送通知、或其他提醒时，给予回应的用户比例</td>
+<td></td>
+</tr>
+<tr>
+<td>平均每日网站停留时间</td>
+<td></td>
+<td>如果访客在你的网站上每天平均花费17分钟，就说明网站用户黏性较好</td>
+</tr>
+</tbody>
+</table>
+<h4 id="双边市场要关注的指标及基准"><a href="#双边市场要关注的指标及基准" class="headerlink" title="双边市场要关注的指标及基准"></a>双边市场要关注的指标及基准</h4><table>
+<thead>
+<tr>
+<th>数据指标</th>
+<th>指标含义</th>
+<th>基准</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>买卖双方的人数增长</td>
+<td>买卖双方的人数增长</td>
+<td></td>
+</tr>
+<tr>
+<td>库存增长</td>
+<td>卖家新增库存的速率，以及商品页面的完整性</td>
+<td></td>
+</tr>
+<tr>
+<td>索索有效性</td>
+<td>买家的搜索内容，以及该内容是否与所建库存相匹配</td>
+<td></td>
+</tr>
+<tr>
+<td>转化漏斗</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>评分以及欺诈迹象</td>
+<td>买卖双方的相互评分、欺诈迹象以及评论语气</td>
+<td></td>
+</tr>
+<tr>
+<td>定价指标</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="精益创业的五大阶段"><a href="#精益创业的五大阶段" class="headerlink" title="精益创业的五大阶段"></a>精益创业的五大阶段</h3><p><strong>移情、黏性、病毒性、营收和规模性</strong>是精益创业的五大阶段。</p>
+<p>对于创业公司而言，所选商业模式以及能够证明假设相当准确的相关证据，要远比商业计划书重要得多。</p>
+<p>不同阶段关注的指标不同，如<strong>移情阶段</strong>需要<strong>定性分析</strong>，<strong>黏性阶</strong>段关注<strong>用户参与度</strong>，<strong>病毒性阶段</strong>关注<strong>产品传播能力</strong>，<strong>营收阶段</strong>关注<strong>每位客户营收</strong>，<strong>规模化阶段</strong>关注比较<strong>不同渠道、地域和营销活动内的高阶指标</strong>等。</p>
+<table>
+<thead>
+<tr>
+<th>精益分析阶</th>
+<th>含义/主要目标</th>
+<th>关键指标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>移情</td>
+<td>深入目标市场，着手解决人们关心的问题，从而促进消费者愿意为你的商品买单</td>
+<td>找到一个人们愿意为之付钱的问题</td>
+</tr>
+<tr>
+<td>黏性</td>
+<td>黏性来自好的产品。你需要了解自己能否找到已发现问题的解决方案</td>
+<td>参与度，以用户与你的交互时间以及回访率等作为衡量标准</td>
+</tr>
+<tr>
+<td>病毒性</td>
+<td>在保证产品或服务的黏性后，即可开始口碑营销</td>
+<td>病毒式传播系数，病毒传播周期</td>
+</tr>
+<tr>
+<td>营收</td>
+<td>此阶段的重点为营收的最大化和优化</td>
+<td>客户收益回报-客户获取成本</td>
+</tr>
+<tr>
+<td>规模性</td>
+<td>盈利后，公司即可从自身发展模式切换至市场扩张模式</td>
+<td>开始关心薪酬、API流量、渠道关系以及竞争力</td>
+</tr>
+</tbody>
+</table>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/06/24/精益数据分析/">精益数据分析</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Yue Dandy 的个人博客">Yue Dandy</a></p>
+        <p><span>发布时间:</span>2018年06月24日 - 17时20分</p>
+        <p><span>最后更新:</span>2018年06月25日 - 17时02分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/06/24/精益数据分析/" title="精益数据分析">http://github.com/lzxyzq/2018/06/24/精益数据分析/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://github.com/lzxyzq/2018/06/24/精益数据分析/　　作者: Yue Dandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2018/07/18/利用python进行数据分析/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          利用python进行数据分析
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/02/从Excel到Python——数据分析/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">从Excel到Python——数据分析</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#精益数据分析基本方法"><span class="toc-number">1.</span> <span class="toc-text">精益数据分析基本方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本的分析概念"><span class="toc-number">1.1.</span> <span class="toc-text">基本的分析概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8个需要提防的虚荣数据指标（模式）"><span class="toc-number">1.2.</span> <span class="toc-text">8个需要提防的虚荣数据指标（模式）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据测试方法：市场细分、同期群分析、A-B测试和多变量分析"><span class="toc-number">1.3.</span> <span class="toc-text">数据测试方法：市场细分、同期群分析、A/B测试和多变量分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是好的数据指标："><span class="toc-number">1.4.</span> <span class="toc-text">什么是好的数据指标：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#探索正确数据指标的五点注意："><span class="toc-number">1.5.</span> <span class="toc-text">探索正确数据指标的五点注意：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据分析框架："><span class="toc-number">1.6.</span> <span class="toc-text">数据分析框架：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#阿什·莫瑞亚的精益创业画布"><span class="toc-number">1.6.1.</span> <span class="toc-text">阿什·莫瑞亚的精益创业画布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#戴夫·麦克卢尔的“海盗指标”即AARRR模型"><span class="toc-number">1.6.2.</span> <span class="toc-text">戴夫·麦克卢尔的“海盗指标”即AARRR模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#埃里克·莱斯创业增长三大引擎"><span class="toc-number">1.6.3.</span> <span class="toc-text">埃里克·莱斯创业增长三大引擎</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#肖恩·埃利斯的创业增长金字塔"><span class="toc-number">1.6.4.</span> <span class="toc-text">肖恩·埃利斯的创业增长金字塔</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第一关键指标（OMTM：One-Metric-That-Matters）："><span class="toc-number">1.7.</span> <span class="toc-text">第一关键指标（OMTM：One Metric That Matters）：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六种商业模式下的数据分析"><span class="toc-number">2.</span> <span class="toc-text">六种商业模式下的数据分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#商业模式"><span class="toc-number">2.1.</span> <span class="toc-text">商业模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#电子商务要关注的指标及对应的指标基准"><span class="toc-number">2.1.1.</span> <span class="toc-text">电子商务要关注的指标及对应的指标基准</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SaaS要关注指标及基准"><span class="toc-number">2.1.2.</span> <span class="toc-text">SaaS要关注指标及基准</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#免费移动应用要关注的指标及基准"><span class="toc-number">2.1.3.</span> <span class="toc-text">免费移动应用要关注的指标及基准</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#媒体网站要关注的指标及基准"><span class="toc-number">2.1.4.</span> <span class="toc-text">媒体网站要关注的指标及基准</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UCG要关注的指标及基准"><span class="toc-number">2.1.5.</span> <span class="toc-text">UCG要关注的指标及基准</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#双边市场要关注的指标及基准"><span class="toc-number">2.1.6.</span> <span class="toc-text">双边市场要关注的指标及基准</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#精益创业的五大阶段"><span class="toc-number">2.2.</span> <span class="toc-text">精益创业的五大阶段</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2018/06/24/精益数据分析/" data-title="精益数据分析" data-url="http://github.com/lzxyzq/2018/06/24/精益数据分析/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lzxyzq"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/07/18/利用python进行数据分析/" title="上一篇: 利用python进行数据分析">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2018/06/02/从Excel到Python——数据分析/" title="下一篇: 从Excel到Python——数据分析">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/24/计算机网络/">计算机网络</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/利用python进行数据分析/">利用python进行数据分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/24/精益数据分析/">精益数据分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/02/从Excel到Python——数据分析/">从Excel到Python——数据分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/31/Python文件读取/">Python文件读取</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/31/Python函数使用/">Python函数使用</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2018 Yue Dandy
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank"></a>Created
+                <a href="https://github.com/lzxyzq/hexo-theme-spfk" target="_blank"></a> by lzxyzq
+            </div>
+        </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>
