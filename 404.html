@@ -31,13 +31,15 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
   
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
   <!-- 加载特效 -->
     <script src="/js/pace.js"></script>
     <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
   <script>
       var yiliaConfig = {
           rootUrl: '/',
-          fancybox: false,
+          fancybox: true,
           animate: true,
           isHome: false,
           isPost: false,
@@ -147,8 +149,6 @@
                             
                                 <a class="fl linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
                             
-                                <a class="fl Instagram" target="_blank" href="#" title="Instagram">Instagram</a>
-                            
                         </ul>
                     </nav>
                 </section>
@@ -235,8 +235,6 @@
                     
                         <a class="linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
                     
-                        <a class="Instagram" target="_blank" href="#" title="Instagram">Instagram</a>
-                    
                 </div>
             </nav>
         </header>                
@@ -251,6 +249,8 @@
     </div>
   
   <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -455,6 +455,26 @@
                 <a href="https://github.com/lzxyzq/hexo-theme-spfk" target="_blank"></a> by lzxyzq
             </div>
         </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >Mate到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
         
     </div>
 </footer>
