@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Logistic Regression, LDA QDA and KNN | 浪子心游子情</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在本文档中，我将向您展示如何在股票市场数据集（Smarket）上运行LR，LDA，QDA和KNN的分类方法。 对于每种方法，我将单独读取数据，因为其中一些方法要求我们以不同的方式输入数据（尤其是KNN函数）。">
+<meta name="keywords" content="R语言,回归">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Logistic Regression, LDA QDA and KNN">
+<meta property="og:url" content="http://github.com/lzxyzq/2018/12/29/线性回归/index.html">
+<meta property="og:site_name" content="浪子心游子情">
+<meta property="og:description" content="在本文档中，我将向您展示如何在股票市场数据集（Smarket）上运行LR，LDA，QDA和KNN的分类方法。 对于每种方法，我将单独读取数据，因为其中一些方法要求我们以不同的方式输入数据（尤其是KNN函数）。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-01T15:39:39.431Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Logistic Regression, LDA QDA and KNN">
+<meta name="twitter:description" content="在本文档中，我将向您展示如何在股票市场数据集（Smarket）上运行LR，LDA，QDA和KNN的分类方法。 对于每种方法，我将单独读取数据，因为其中一些方法要求我们以不同的方式输入数据（尤其是KNN函数）。">
+  
+    <link rel="alternative" href="/atom.xml" title="浪子心游子情" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: true
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Yue Dandy</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">精于心 简于形</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home">博客首页</a></li>
+                        
+                            <li><a href="/About">作品展示</a></li>
+                        
+                            <li><a href="https://www.zhihu.com/pub/">静心阅读</a></li>
+                        
+                            <li><a href="https://www.vmovier.com/53766">光影之路</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/R语言/" style="font-size: 10px;">R语言</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/回归/" style="font-size: 10px;">回归</a> <a href="/tags/数据分析/" style="font-size: 20px;">数据分析</a> <a href="/tags/数据可视化/" style="font-size: 10px;">数据可视化</a> <a href="/tags/文件/" style="font-size: 10px;">文件</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/lzxyzq/">Github</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://mp.weixin.qq.com/s?__biz=MzI4MzAxNDQ1Mw==&mid=207493606&idx=3&sn=a85753ccfc195c50a0e509ff0add0850#rd">公众号</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">侦探🕵️迷、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Yue Dandy</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Yue Dandy</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">精于心 简于形</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home">博客首页</a></li>
+                
+                    <li><a href="/About">作品展示</a></li>
+                
+                    <li><a href="https://www.zhihu.com/pub/">静心阅读</a></li>
+                
+                    <li><a href="https://www.vmovier.com/53766">光影之路</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-线性回归" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/12/29/线性回归/" class="article-date">
+      <time datetime="2018-12-29T06:21:22.000Z" itemprop="datePublished">2018-12-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Logistic Regression, LDA QDA and KNN
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/算法/">算法</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R语言/">R语言</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/回归/">回归</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>在本文档中，我将向您展示如何在股票市场数据集（Smarket）上运行LR，LDA，QDA和KNN的分类方法。 对于每种方法，我将单独读取数据，因为其中一些方法要求我们以不同的方式输入数据（尤其是KNN函数）。<br><a id="more"></a></p>
+<h2 id="Logistic-Regression-LR"><a href="#Logistic-Regression-LR" class="headerlink" title="Logistic Regression(LR)"></a>Logistic Regression(LR)</h2><p>Smarket数据集是ISLR包的一部分。我们首先阅读加载ISLR包，然后将Smarket数据集拆分为训练和测试数据。在这个问题中，我们将使用子集技术（向量子集）。训练数据集将包含2005年之前的所有观测资料，测试数据集将包含2005年的所有观测资料。</p>
+<p>以下命令将Smarket的数据框附加到R的工作目录（内存）。这将使我们能够直接访问数据集中的变量而无需指定数据框的名称，因此我们可以直接键入Smarket数据集中Year的变量，而不是键入Smarket $ Year。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">library(ISLR) attach(Smarket)</span><br><span class="line">## find the indecies for the observations in Smarket that consitutes the training</span><br><span class="line">## and testing data</span><br><span class="line">train = Year &lt; 2005</span><br><span class="line">test = !train</span><br></pre></td></tr></table></figure></p>
+<p>上面的命令创建了两个布尔向量。 布尔向量的值为TRUE或FALSE。 对于训练矢量，将为具有与年份&lt;2005的Smarket中的观测具有相同index的单元分配TRUE。 “！”否定了训练中的内容。<br>选择Smarket中将进入培训和测试数据集的值。请注意，我们摆脱了第8个变量today因为它与方向类似。实际上，这就是Direction的计算方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">training_data = Smarket[train, -8]</span><br><span class="line">testing_data = Smarket[test, -8]</span><br></pre></td></tr></table></figure></p>
+<p>对于模型评估目的，我们将创建一个包含测试数据集中所有y值的向量。 在我们使用训练数据创建模型之后，模型评估将在稍后进行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">testing_y = Direction[test]</span><br></pre></td></tr></table></figure></p>
+<p>我们使用Direction因为这是我们想要预测的（我们的y变量）。 请注意，当我们索引Direction时，我们没有输入逗号，因为它是一个向量（一列）而不是Dataframe！现在是时候使用训练数据集训练我们的模型了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logistic_model = glm(Direction ~ .,data = training_data,family = &quot;binomial&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>在上面的逻辑回归模型中，我们使用glm（）函数，它是一般的线性模型。 第一个参数是我们的回归方程，它指定我们使用我们的data集中的所有预测变量来预测Direction（.意味着使用所有变量）。如果你想使用特定的变量，比如说Lag1和Lag2，那么公式就是Direction~Lag1 + Lag2。 我们使用训练数据集来训练我们的模型，并且我们将模型的family指定为二项式，因为我们正在运行逻辑回归。 如果我们不指定线性模型的family，则模型将是常规线性回归。</p>
+<p>接下来，我们要评估我们的模型logistic_model。 为此，我们将预测测试数据集的y值，然后将预测的y与我们之前在名称testing_y下保存的实际值进行比较。 当在逻辑回归中使用predict（）函数时，它会计算在一个类别或另一个类别中的预测概率（在我们的例子中为Down或Up）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> logistic_probs = predict(logistic_model, testing_data, type = &quot;response&quot;) head(logistic_probs)</span><br><span class="line"></span><br><span class="line">## 999   1000   1001   1002   1003   1004</span><br><span class="line">## 0.6385 0.6017 0.6038 0.5962 0.5875 0.5928</span><br></pre></td></tr></table></figure></p>
+<p>由于predict（）计算概率，因此我们必须将它们转换为实际的类别（Up或Down）。 不幸的是，在逻辑回归中，predict（）函数不会产生类别。 那么，让我们转换这些可能性。 我们首先创建一个向量来保存这些类。 这个数组将具有相同的testing_y长度（本例中为252），我们将初始化它以使其所有单元格标记为Down，然后我们将更新相应的预测可能性为大于0.5（此阈值可能会根据应用程序而变化）的单元格为Up。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">logistic_pred_y = rep(&quot;Down&quot;, length(testing_y)) </span><br><span class="line">## the function rep(), repeats &quot;Down&quot; 252 times</span><br><span class="line"></span><br><span class="line">logistic_pred_y[logistic_probs &gt; 0.5] = &quot;Up&quot;</span><br><span class="line"></span><br><span class="line">## R will first evaluate &quot;logistic_probs &gt;0.5&quot;, and it will be a vector of TRUE and FALSE.</span><br><span class="line">## TRUE when the value of the cell in logistic_prob &gt; 0.5, otherwise FALSE.</span><br><span class="line">## R will replace all the &quot;Down&quot; values in &quot;logistic_pred_y&quot; vector with &quot;Up&quot;</span><br><span class="line">## when &quot;logistic_probs &gt;0.5&quot; is TRUE.</span><br></pre></td></tr></table></figure></p>
+<p>评估的最后几个步骤包括找到模型的混淆矩阵。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">## the following command creates the confusion matrix table(logistic_pred_y, testing_y)</span><br><span class="line"></span><br><span class="line">##                testing_y</span><br><span class="line">## logistic_pred_y Down  Up</span><br><span class="line">##      Down        2     1</span><br><span class="line">##       Up        109   140</span><br></pre></td></tr></table></figure></p>
+<p>现在，让我们计算错误分类错误率：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mean(logistic_pred_y != testing_y)</span><br><span class="line"></span><br><span class="line">## [1] 0.4365</span><br></pre></td></tr></table></figure></p>
+<p>我们在上面创建的逻辑回归模型的错误分类错误率是43.65％，这被认为是高错误分类错误率。</p>
+<h3 id="代码脚本："><a href="#代码脚本：" class="headerlink" title="代码脚本："></a>代码脚本：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">library(ISLR)</span><br><span class="line">attach(Smarket)</span><br><span class="line">train = Year &lt; 2005</span><br><span class="line">test = !train</span><br><span class="line"></span><br><span class="line">names(Smarket)</span><br><span class="line">training_data = Smarket[train, -8]</span><br><span class="line">testing_data = Smarket[test, -8]</span><br><span class="line"></span><br><span class="line">test_y = Direction[test]</span><br><span class="line"></span><br><span class="line">logistic_model = glm(Direction ~ .,</span><br><span class="line">                     data = training_data,</span><br><span class="line">                     family = &quot;binomial&quot;)</span><br><span class="line">summary(logistic_model)</span><br><span class="line"></span><br><span class="line">logistic_probs = predict(logistic_model, testing_data, type = &quot;response&quot;) </span><br><span class="line">head(logistic_probs)</span><br><span class="line"></span><br><span class="line">logistic_pred_y = rep(&quot;Down&quot;, length(test_y)) </span><br><span class="line">## the function rep(), repeats &quot;Down&quot; 252 times</span><br><span class="line">logistic_pred_y[logistic_probs &gt; 0.5] = &quot;Up&quot;</span><br><span class="line"></span><br><span class="line">## the following command creates the confusion matrix </span><br><span class="line">table(logistic_pred_y, test_y)</span><br><span class="line">mean(logistic_pred_y != test_y)</span><br></pre></td></tr></table></figure>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p><strong>Generalized Linear Models</strong></p>
+<p>Generalized linear models are fit using the glm( ) function. The form of the glm function is<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">glm(formula, family=familytype(link=linkfunction), data=)</span><br></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>family</th>
+<th>Default Link Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>binomial</td>
+<td>(link = “logit”)</td>
+</tr>
+<tr>
+<td>gaussian</td>
+<td>(link = “identity”)</td>
+</tr>
+<tr>
+<td>Gamma</td>
+<td>(link = “inverse”)</td>
+</tr>
+<tr>
+<td>inverse.gaussian</td>
+<td>(link = “1/mu^2”)</td>
+</tr>
+<tr>
+<td>poisson</td>
+<td>(link = “log”)</td>
+</tr>
+<tr>
+<td>quasi</td>
+<td>(link = “identity”, variance = “constant”)</td>
+</tr>
+<tr>
+<td>quasibinomial</td>
+<td>(link = “logit”)</td>
+</tr>
+<tr>
+<td>quasipoisson</td>
+<td>(link = “log”)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Linear-Discriminant-Analysis-LDA"><a href="#Linear-Discriminant-Analysis-LDA" class="headerlink" title="Linear Discriminant Analysis (LDA)"></a>Linear Discriminant Analysis (LDA)</h2><p><strong>线性分类判别</strong></p>
+<p>要在R中运行LDA，我们将使用lda（）函数，该函数是名为MASS的包的一部分。 这个软件包附带了R的核心版本，因此我们只需要在使用lda（）函数之前将其加载到R的工作目录中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">library(MASS)</span><br><span class="line">## create an LDA model. The lda() function takes a forumla and the name of the training data set as its argument</span><br><span class="line"></span><br><span class="line">lda_model = lda(Direction~., data = training_data)</span><br></pre></td></tr></table></figure></p>
+<p>接下来，我们将评估模型，因此我们将再次对我们的测试数据集使用predict（）函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lda_pred = predict(lda_model,testing_data) </span><br><span class="line">names(lda_pred)</span><br><span class="line">## [1] &quot;class&quot;     &quot;posterior&quot; &quot;x&quot;</span><br><span class="line">lda_pred_y = lda_pred$class</span><br></pre></td></tr></table></figure></p>
+<p>好消息是，在预测（）函数中使用LDA模型时，输出是类别本身（类），与我们使用逻辑回归模型（输出是概率）时发生的情况不同。<br>好的，现在是评估模型的时候了。我们创建混淆矩阵并计算错误分类错误。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">## compute the confusion matrix </span><br><span class="line">table(lda_pred_y, testing_y)</span><br><span class="line"></span><br><span class="line">##           testing_y</span><br><span class="line">## lda_pred_y Down  Up</span><br><span class="line">## Down        2     1</span><br><span class="line">## Up         109    140</span><br></pre></td></tr></table></figure></p>
+<p>计算错误分类错误率<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mean(lda_pred_y != testing_y)</span><br><span class="line">## [1] 0.4365</span><br></pre></td></tr></table></figure></p>
+<p>LDA模型的错误分类错误率与逻辑回归模型的错误分类错误率相同。 让我们检查一下QDA模型在错误分类错误率方面是否会做得更好。</p>
+<h3 id="代码脚本"><a href="#代码脚本" class="headerlink" title="代码脚本"></a>代码脚本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">library(MASS)</span><br><span class="line">## create an LDA model. The lda() function takes a forumla and the name of the training data set as its argument</span><br><span class="line"></span><br><span class="line">lda_model = lda(Direction~., data = training_data)</span><br><span class="line">lda_pred = predict(lda_model,testing_data) </span><br><span class="line">names(lda_pred)</span><br><span class="line">lda_pred_y = lda_pred$class</span><br><span class="line">## compute the confusion matrix </span><br><span class="line">table(lda_pred_y, testing_y)</span><br><span class="line">## compute the misclassification error rate</span><br><span class="line">mean(lda_pred_y != testing_y)</span><br></pre></td></tr></table></figure>
+<h2 id="Quadratic-Discriminant-Analysis-QDA"><a href="#Quadratic-Discriminant-Analysis-QDA" class="headerlink" title="Quadratic Discriminant Analysis (QDA)"></a>Quadratic Discriminant Analysis (QDA)</h2><p><strong>二次分类判别</strong></p>
+<p>培训和评估QDA模型在语法上与培训和评估LDA模型非常相似。 唯一的区别在于函数名称lda（）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">library(MASS)</span><br><span class="line">qda_model = qda(Direction~., data = training_data) qda_pred = predict(qda_model, testing_data) qda_pred_y = qda_pred$class</span><br><span class="line">table(qda_pred_y, testing_y)</span><br><span class="line"></span><br><span class="line">##             testing_y </span><br><span class="line">## qda_pred_y Down Up </span><br><span class="line">##     Down    43  51 </span><br><span class="line">##      Up     68  90</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mean(qda_pred_y != testing_y)</span><br><span class="line"></span><br><span class="line">## [1] 0.4722</span><br></pre></td></tr></table></figure>
+<p>QDA模型的错误分配错误率为47.22％，高于我们从逻辑回归和LDA模型得到的错误率。</p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/12/29/线性回归/">Logistic Regression, LDA QDA and KNN</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Yue Dandy 的个人博客">Yue Dandy</a></p>
+        <p><span>发布时间:</span>2018年12月29日 - 14时21分</p>
+        <p><span>最后更新:</span>2019年01月01日 - 23时39分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/12/29/线性回归/" title="Logistic Regression, LDA QDA and KNN">http://github.com/lzxyzq/2018/12/29/线性回归/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://github.com/lzxyzq/2018/12/29/线性回归/　　作者: Yue Dandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/25/用数据讲故事/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">用数据讲故事</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Logistic-Regression-LR"><span class="toc-number">1.</span> <span class="toc-text">Logistic Regression(LR)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码脚本："><span class="toc-number">1.1.</span> <span class="toc-text">代码脚本：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#补充"><span class="toc-number">1.2.</span> <span class="toc-text">补充</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linear-Discriminant-Analysis-LDA"><span class="toc-number">2.</span> <span class="toc-text">Linear Discriminant Analysis (LDA)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码脚本"><span class="toc-number">2.1.</span> <span class="toc-text">代码脚本</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Quadratic-Discriminant-Analysis-QDA"><span class="toc-number">3.</span> <span class="toc-text">Quadratic Discriminant Analysis (QDA)</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2018/12/29/线性回归/" data-title="Logistic Regression, LDA QDA and KNN" data-url="http://github.com/lzxyzq/2018/12/29/线性回归/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lzxyzq"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2018/12/25/用数据讲故事/" title="下一篇: 用数据讲故事">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/12/29/线性回归/">Logistic Regression, LDA QDA and KNN</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/25/用数据讲故事/">用数据讲故事</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/24/计算机网络/">计算机网络</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/利用python进行数据分析/">利用python进行数据分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/24/精益数据分析/">精益数据分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/02/从Excel到Python——数据分析/">从Excel到Python——数据分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/31/Python文件读取/">Python文件读取</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/31/Python函数使用/">Python函数使用</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+
+
+   <div id="lv-container" data-id="city" data-uid="MTAyMC80MTczOS8xODI4NQ==">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+   </div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 Yue Dandy
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank"></a>Created
+                <a href="https://github.com/lzxyzq/hexo-theme-spfk" target="_blank"></a> by lzxyzq
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >Mate到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>
