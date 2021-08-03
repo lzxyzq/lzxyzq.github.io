@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python for Data Analysis | Dandy Yue</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="keywords" content="Data Analysis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python for Data Analysis">
+<meta property="og:url" content="http://github.com/lzxyzq/2018/07/17/利用python进行数据分析/index.html">
+<meta property="og:site_name" content="Dandy Yue">
+<meta property="og:locale" content="en-gb">
+<meta property="og:image" content="http://github.com/img/利用python进行数据分析/python_data_analysis_cover.jpg">
+<meta property="og:image" content="http://github.com/img/image0.png">
+<meta property="og:image" content="http://github.com/img/image1.png">
+<meta property="og:image" content="http://github.com/img/image2.png">
+<meta property="og:image" content="http://github.com/img/image3.png">
+<meta property="og:image" content="http://github.com/img/image4.png">
+<meta property="og:image" content="http://github.com/img/image5.png">
+<meta property="og:image" content="http://github.com/img/image6.png">
+<meta property="og:image" content="http://github.com/img/image7.png">
+<meta property="og:image" content="http://github.com/img/image8.png">
+<meta property="og:image" content="http://github.com/img/image9.png">
+<meta property="og:updated_time" content="2020-11-28T20:34:21.652Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python for Data Analysis">
+<meta name="twitter:image" content="http://github.com/img/利用python进行数据分析/python_data_analysis_cover.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="Dandy Yue" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: true
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Yue Dandy</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">Sense and Simplicity</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>
+        
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home/H1/index.html">Home</a></li>
+                        
+                            <li><a href="/About">Projects</a></li>
+                        
+                            <li><a href="https://app.gitbook.com/@lzxyzq/s/data-structure-and-algorithms/">Notes</a></li>
+                        
+                            <li><a href="/archives">Articles</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/lzxyzq/" title="github">github</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="https://www.linkedin.com/in/qiangyue/" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/lzxyzq/">Github</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://lzxyzq.gitbook.io/data-structure-and-algorithms/">Gitbook</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Yue Dandy</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Yue Dandy</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">Sense and Simplicity</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home/H1/index.html">Home</a></li>
+                
+                    <li><a href="/About">Projects</a></li>
+                
+                    <li><a href="https://app.gitbook.com/@lzxyzq/s/data-structure-and-algorithms/">Notes</a></li>
+                
+                    <li><a href="/archives">Articles</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/lzxyzq/" title="github">github</a>
+                    
+                        <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/qiangyue/" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-利用python进行数据分析" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/07/17/利用python进行数据分析/" class="article-date">
+      <time datetime="2018-07-18T02:20:35.000Z" itemprop="datePublished">2018-07-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python for Data Analysis
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Analysis/">Data Analysis</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><img src="/img/利用python进行数据分析/python_data_analysis_cover.jpg" alt="image"><br><a id="more"></a></p>
+<h1 id="ch02"><a href="#ch02" class="headerlink" title="ch02"></a>ch02</h1><h2 id="来自bit-ly的1-usa-gov数据"><a href="#来自bit-ly的1-usa-gov数据" class="headerlink" title="来自bit.ly的1.usa.gov数据"></a>来自bit.ly的1.usa.gov数据</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line">path = &apos;E:\PYTHON\PydataProject\ch02\data\example.txt&apos;</span><br><span class="line">a = open(path).readline()</span><br><span class="line">records = [json.loads(line) for line in open(path)]</span><br><span class="line">for index,item in enumerate(records, 1):</span><br><span class="line">    print(index, item)</span><br><span class="line">-----------------------------------------------    </span><br><span class="line">3559 &#123;&apos;a&apos;: &apos;GoogleProducer&apos;, &apos;c&apos;: &apos;US&apos;, &apos;nk&apos;: 0, &apos;tz&apos;: &apos;America/Los_Angeles&apos;, &apos;gr&apos;: &apos;CA&apos;, &apos;g&apos;: &apos;zjtI4X&apos;, &apos;h&apos;: &apos;zjtI4X&apos;, &apos;l&apos;: &apos;bitly&apos;, &apos;hh&apos;: &apos;1.usa.gov&apos;, &apos;r&apos;: &apos;direct&apos;, &apos;u&apos;: &apos;http://www.ahrq.gov/qual/qitoolkit/&apos;, &apos;t&apos;: 1331926847, &apos;hc&apos;: 1327528527, &apos;cy&apos;: &apos;Mountain View&apos;, &apos;ll&apos;: [37.419201, -122.057404]&#125;</span><br><span class="line">3560 &#123;&apos;a&apos;: &apos;Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; MS-RTC LM 8; .NET4.0C; .NET4.0E; .NET CLR 1.1.4322)&apos;, &apos;c&apos;: &apos;US&apos;, &apos;nk&apos;: 0, &apos;tz&apos;: &apos;America/New_York&apos;, &apos;gr&apos;: &apos;VA&apos;, &apos;g&apos;: &apos;qxKrTK&apos;, &apos;h&apos;: &apos;qxKrTK&apos;, &apos;l&apos;: &apos;bitly&apos;, &apos;al&apos;: &apos;en-US&apos;, &apos;hh&apos;: &apos;1.usa.gov&apos;, &apos;r&apos;: &apos;http://t.co/OEEEvwjU&apos;, &apos;u&apos;: &apos;http://herndon-va.gov/Content/public_safety/Public_Information/weekly_reports.aspx?cnlid=1736&apos;, &apos;t&apos;: 1331926849, &apos;hc&apos;: 1312897670, &apos;cy&apos;: &apos;Mc Lean&apos;, &apos;ll&apos;: [38.935799, -77.162102]&#125;</span><br><span class="line">    </span><br><span class="line">records[:1]</span><br><span class="line">Out[8]: </span><br><span class="line">[&#123;&apos;a&apos;: &apos;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.78 Safari/535.11&apos;,</span><br><span class="line">  &apos;al&apos;: &apos;en-US,en;q=0.8&apos;,</span><br><span class="line">  &apos;c&apos;: &apos;US&apos;,</span><br><span class="line">  &apos;cy&apos;: &apos;Danvers&apos;,</span><br><span class="line">  &apos;g&apos;: &apos;A6qOVH&apos;,</span><br><span class="line">  &apos;gr&apos;: &apos;MA&apos;,</span><br><span class="line">  &apos;h&apos;: &apos;wfLQtf&apos;,</span><br><span class="line">  &apos;hc&apos;: 1331822918,</span><br><span class="line">  &apos;hh&apos;: &apos;1.usa.gov&apos;,</span><br><span class="line">  &apos;l&apos;: &apos;orofrog&apos;,</span><br><span class="line">  &apos;ll&apos;: [42.576698, -70.954903],</span><br><span class="line">  &apos;nk&apos;: 1,</span><br><span class="line">  &apos;r&apos;: &apos;http://www.facebook.com/l/7AQEFzjSi/1.usa.gov/wfLQtf&apos;,</span><br><span class="line">  &apos;t&apos;: 1331923247,</span><br><span class="line">  &apos;tz&apos;: &apos;America/New_York&apos;,</span><br><span class="line">  &apos;u&apos;: &apos;http://www.ncbi.nlm.nih.gov/pubmed/22415991&apos;&#125;]</span><br></pre></td></tr></table></figure>
+<h3 id="列表推导式，后加-if-判断字段是否存在"><a href="#列表推导式，后加-if-判断字段是否存在" class="headerlink" title="列表推导式，后加 if 判断字段是否存在"></a>列表推导式，后加 if 判断字段是否存在</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">time_zones = [rec[&apos;tz&apos;] for rec in records if &apos;tz&apos; in rec]</span><br><span class="line"></span><br><span class="line">time_zones[:5]</span><br><span class="line">Out[6]: </span><br><span class="line">[&apos;America/New_York&apos;,</span><br><span class="line"> &apos;America/Denver&apos;,</span><br><span class="line"> &apos;America/New_York&apos;,</span><br><span class="line"> &apos;America/Sao_Paulo&apos;,</span><br><span class="line"> &apos;America/New_York&apos;]</span><br></pre></td></tr></table></figure>
+<h3 id="对时区计数——pandas库"><a href="#对时区计数——pandas库" class="headerlink" title="对时区计数——pandas库"></a>对时区计数——pandas库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">from collections import defaultdict</span><br><span class="line">def get_counts(sequence):</span><br><span class="line">    counts = defaultdict(int)</span><br><span class="line">    for x in sequence:</span><br><span class="line">        counts[x] +=1</span><br><span class="line">    return counts</span><br><span class="line"></span><br><span class="line">counts = get_counts(time_zones)</span><br><span class="line">num = counts[&apos;America/Los_Angeles&apos;]</span><br><span class="line"></span><br><span class="line">counts</span><br><span class="line">Out[11]: </span><br><span class="line">defaultdict(int,</span><br><span class="line">            &#123;&apos;&apos;: 521,</span><br><span class="line">             &apos;Africa/Cairo&apos;: 3,</span><br><span class="line">             &apos;Africa/Casablanca&apos;: 1,</span><br><span class="line">             &apos;Africa/Ceuta&apos;: 2,</span><br><span class="line">             &apos;Africa/Johannesburg&apos;: 1,</span><br><span class="line">             &apos;Africa/Lusaka&apos;: 1,</span><br><span class="line">             &apos;America/Anchorage&apos;: 5,</span><br><span class="line">             &apos;America/Argentina/Buenos_Aires&apos;: 1</span><br><span class="line">             ……&#125;)</span><br><span class="line">             </span><br><span class="line">num</span><br><span class="line">Out[14]: 382</span><br></pre></td></tr></table></figure>
+<h3 id="前十位的时区及其计数"><a href="#前十位的时区及其计数" class="headerlink" title="前十位的时区及其计数"></a>前十位的时区及其计数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">def top_counts(count_dict,n=10):</span><br><span class="line">    value_key_pairs = [(count,tz) for tz,count in count_dict.items()]</span><br><span class="line">    value_key_pairs.sort()</span><br><span class="line">    return value_key_pairs[-n:]</span><br><span class="line">top_counts(counts)</span><br><span class="line"></span><br><span class="line">----------------------------------------------</span><br><span class="line">top_counts(counts)</span><br><span class="line">Out[25]: </span><br><span class="line">[(33, &apos;America/Sao_Paulo&apos;),</span><br><span class="line"> (35, &apos;Europe/Madrid&apos;),</span><br><span class="line"> (36, &apos;Pacific/Honolulu&apos;),</span><br><span class="line"> (37, &apos;Asia/Tokyo&apos;),</span><br><span class="line"> (74, &apos;Europe/London&apos;),</span><br><span class="line"> (191, &apos;America/Denver&apos;),</span><br><span class="line"> (382, &apos;America/Los_Angeles&apos;),</span><br><span class="line"> (400, &apos;America/Chicago&apos;),</span><br><span class="line"> (521, &apos;&apos;),</span><br><span class="line"> (1251, &apos;America/New_York&apos;)]</span><br></pre></td></tr></table></figure>
+<h3 id="使用collections-Counter类计数更加方便"><a href="#使用collections-Counter类计数更加方便" class="headerlink" title="使用collections.Counter类计数更加方便"></a>使用collections.Counter类计数更加方便</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">from collections import Counter</span><br><span class="line">counts = Counter(time_zones)</span><br><span class="line">counts.most_common(10)</span><br><span class="line"></span><br><span class="line">------------------------------------------</span><br><span class="line">counts.most_common(10)</span><br><span class="line">Out[26]: </span><br><span class="line">[(&apos;America/New_York&apos;, 1251),</span><br><span class="line"> (&apos;&apos;, 521),</span><br><span class="line"> (&apos;America/Chicago&apos;, 400),</span><br><span class="line"> (&apos;America/Los_Angeles&apos;, 382),</span><br><span class="line"> (&apos;America/Denver&apos;, 191),</span><br><span class="line"> (&apos;Europe/London&apos;, 74),</span><br><span class="line"> (&apos;Asia/Tokyo&apos;, 37),</span><br><span class="line"> (&apos;Pacific/Honolulu&apos;, 36),</span><br><span class="line"> (&apos;Europe/Madrid&apos;, 35),</span><br><span class="line"> (&apos;America/Sao_Paulo&apos;, 33)]</span><br></pre></td></tr></table></figure>
+<h3 id="用pandas对时区进行计数"><a href="#用pandas对时区进行计数" class="headerlink" title="用pandas对时区进行计数"></a>用pandas对时区进行计数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from pandas import DataFrame,Series</span><br><span class="line">import pandas as pd</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">frame = DataFrame(records)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>frame[‘tz’]返回的Series对象，该对象有一个</li>
+<li>value_counts方法</li>
+<li>Series对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">frame[&apos;tz&apos;][:10]</span><br><span class="line">tz_count = frame[&apos;tz&apos;].value_counts()</span><br><span class="line">tz_count[:10]</span><br><span class="line"></span><br><span class="line">--------------------------------------</span><br><span class="line">tz_count[:10]</span><br><span class="line">Out[24]: </span><br><span class="line">America/New_York       1251</span><br><span class="line">                        521</span><br><span class="line">America/Chicago         400</span><br><span class="line">America/Los_Angeles     382</span><br><span class="line">America/Denver          191</span><br><span class="line">Europe/London            74</span><br><span class="line">Asia/Tokyo               37</span><br><span class="line">Pacific/Honolulu         36</span><br><span class="line">Europe/Madrid            35</span><br><span class="line">America/Sao_Paulo        33</span><br><span class="line">Name: tz, dtype: int64</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="matplotlib数据可视化"><a href="#matplotlib数据可视化" class="headerlink" title="matplotlib数据可视化"></a>matplotlib数据可视化</h3><ul>
+<li>先处理记录中未知或缺失的时区填上一个替代值</li>
+</ul>
+<p><strong>fillna函数可以替代缺失值NA，未知值（空字符串）则可以通过布尔型数组索引加以替换</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tz_count[:10].plot(kind=&apos;barh&apos;,rot = 0)</span><br></pre></td></tr></table></figure>
+<p><img src="/img/image0.png" alt="image"></p>
+<ul>
+<li>split()</li>
+<li>dropna()</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">results = Series([x.split()[0] for x in frame.a.dropna()]) </span><br><span class="line">results[:5] </span><br><span class="line">results.value_counts()[:8]</span><br><span class="line">Out[20]: </span><br><span class="line">Mozilla/5.0                 2594</span><br><span class="line">Mozilla/4.0                  601</span><br><span class="line">GoogleMaps/RochesterNY       121</span><br><span class="line">Opera/9.80                    34</span><br><span class="line">TEST_INTERNET_AGENT           24</span><br><span class="line">GoogleProducer                21</span><br><span class="line">Mozilla/6.0                    5</span><br><span class="line">BlackBerry8520/5.0.0.681       4</span><br><span class="line">dtype: int64</span><br></pre></td></tr></table></figure>
+<ul>
+<li>cframe = frame[frame.a.notnull()]</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cframe = frame[frame.a.notnull()]</span><br><span class="line">operating_system =np.where(cframe[&apos;a&apos;].str.contains(&apos;Windows&apos;),&apos;Windows&apos;,&apos;Not Windows&apos;)</span><br><span class="line">operating_system[:5]</span><br><span class="line">by_tz_os = cframe.groupby([&apos;tz&apos;,operating_system])</span><br></pre></td></tr></table></figure>
+<ul>
+<li>size()</li>
+<li>unstack()<h3 id="对分组结果进行计数，并利用unstack对计数结果进行重塑"><a href="#对分组结果进行计数，并利用unstack对计数结果进行重塑" class="headerlink" title="对分组结果进行计数，并利用unstack对计数结果进行重塑"></a>对分组结果进行计数，并利用unstack对计数结果进行重塑</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">agg_counts = by_tz_os.size().unstack().fillna(0)</span><br><span class="line"></span><br><span class="line">agg_counts</span><br><span class="line">Out[19]: </span><br><span class="line">                                Not Windows  Windows</span><br><span class="line">tz                                                  </span><br><span class="line">                                      245.0    276.0</span><br><span class="line">Africa/Cairo                            0.0      3.0</span><br><span class="line">Africa/Casablanca                       0.0      1.0</span><br><span class="line">Africa/Ceuta                            0.0      2.0</span><br><span class="line">Africa/Johannesburg                     0.0      1.0</span><br><span class="line">Africa/Lusaka                           0.0      1.0</span><br><span class="line">America/Anchorage                       4.0      1.0</span><br><span class="line">America/Argentina/Buenos_Aires          1.0      0.0</span><br><span class="line">America/Argentina/Cordoba               0.0      1.0</span><br><span class="line">America/Argentina/Mendoza               0.0      1.0</span><br><span class="line">America/Bogota                          1.0      2.0</span><br><span class="line">America/Caracas                         0.0      1.0</span><br><span class="line">America/Chicago                       115.0    285.0</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>最后，我们来选取最常出现的时区。为了达到这个目的，我根据agg_counts中的行数构造了一个间接索引数组：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 用于按升序排列</span><br><span class="line">indexer = agg_counts.sum(1).argsort()</span><br><span class="line">indexer[:10]</span><br><span class="line">Out[26]: </span><br><span class="line">tz</span><br><span class="line">                                  24</span><br><span class="line">Africa/Cairo                      20</span><br><span class="line">Africa/Casablanca                 21</span><br><span class="line">Africa/Ceuta                      92</span><br><span class="line">Africa/Johannesburg               87</span><br><span class="line">Africa/Lusaka                     53</span><br><span class="line">America/Anchorage                 54</span><br><span class="line">America/Argentina/Buenos_Aires    57</span><br><span class="line">America/Argentina/Cordoba         26</span><br><span class="line">America/Argentina/Mendoza         55</span><br></pre></td></tr></table></figure>
+<p>然后通过take按照这个顺序截取了最后10行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">count_subset = agg_counts.take(indexer)[-10:]</span><br><span class="line">count_subset</span><br><span class="line">Out[29]: </span><br><span class="line">                     Not Windows  Windows</span><br><span class="line">tz                                       </span><br><span class="line">America/Sao_Paulo           13.0     20.0</span><br><span class="line">Europe/Madrid               16.0     19.0</span><br><span class="line">Pacific/Honolulu             0.0     36.0</span><br><span class="line">Asia/Tokyo                   2.0     35.0</span><br><span class="line">Europe/London               43.0     31.0</span><br><span class="line">America/Denver             132.0     59.0</span><br><span class="line">America/Los_Angeles        130.0    252.0</span><br><span class="line">America/Chicago            115.0    285.0</span><br><span class="line">                           245.0    276.0</span><br><span class="line">America/New_York           339.0    912.0</span><br></pre></td></tr></table></figure>
+<p>使用stacked = True 来生成一张堆积条形图。按Windows和非Windows用户统计的最常出现的时区。<br><img src="/img/image1.png" alt="image"></p>
+<p>这张图不太容易看清楚小分组中Windows用户的相对比例，因此我们可以将各行规范化为“总计为1”并重新绘图。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">normal_subset = count_subset.div(count_subset.sum(1),axis=0)</span><br><span class="line">normal_subset.plot(kind=&apos;barh&apos;,stacked=True)</span><br></pre></td></tr></table></figure>
+<p>按Windows和非Windows用户比例统计的最常出现的时区。</p>
+<p><img src="/img/image2.png" alt="image"></p>
+<h2 id="MovieLens-1M-数据集"><a href="#MovieLens-1M-数据集" class="headerlink" title="MovieLens 1M 数据集"></a>MovieLens 1M 数据集</h2><p>MovieLens 1M 数据集包含来自6000名用户对4000部电影的100万条评分数据。它分为三个表：评分、用户信息和电影信息。将该数据从zip文件中解压出来之后，可以通过pandas.read_table将各个表分别读到一个pandas DataFrame对象中：</p>
+<h3 id="数据导入"><a href="#数据导入" class="headerlink" title="数据导入"></a>数据导入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd </span><br><span class="line">import os</span><br><span class="line"></span><br><span class="line">os.chdir(&apos;/Users/yueqiang/Python Coding/python data analysis data/datasets/&apos;)</span><br><span class="line"></span><br><span class="line">unames = [&apos;user_id&apos;,&apos;gender&apos;,&apos;age&apos;,&apos;occupation&apos;,&apos;zip&apos;]</span><br><span class="line">users = pd.read_table(&apos;movielens/users.dat&apos;,sep=&apos;::&apos;,header=None,names=unames)</span><br><span class="line"></span><br><span class="line">rnames = [&apos;user_id&apos;,&apos;movie_id&apos;,&apos;rating&apos;,&apos;timestamp&apos;]</span><br><span class="line">ratings = pd.read_table(&apos;movielens/ratings.dat&apos;,sep=&apos;::&apos;,header=None,names=rnames)</span><br><span class="line"></span><br><span class="line">mnames = [&apos;movie_id&apos;,&apos;title&apos;,&apos;genres&apos;]</span><br><span class="line">movies = pd.read_table(&apos;movielens/movies.dat&apos;,sep=&apos;::&apos;,header=None,names=mnames)</span><br></pre></td></tr></table></figure>
+<p>利用Python的切片语法，通过查看每个DataFrame的前几行即可验证数据加载工作是否一切顺利。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">users[:5]</span><br><span class="line">Out[49]: </span><br><span class="line">   user_id gender  age  occupation    zip</span><br><span class="line">0        1      F    1          10  48067</span><br><span class="line">1        2      M   56          16  70072</span><br><span class="line">2        3      M   25          15  55117</span><br><span class="line">3        4      M   45           7  02460</span><br><span class="line">4        5      M   25          20  55455</span><br><span class="line"></span><br><span class="line">ratings[:5]</span><br><span class="line">Out[50]: </span><br><span class="line">   user_id  movie_id  rating  timestamp</span><br><span class="line">0        1      1193       5  978300760</span><br><span class="line">1        1       661       3  978302109</span><br><span class="line">2        1       914       3  978301968</span><br><span class="line">3        1      3408       4  978300275</span><br><span class="line">4        1      2355       5  978824291</span><br><span class="line"></span><br><span class="line">movies[:5]</span><br><span class="line">Out[54]: </span><br><span class="line">   movie_id              ...                                     genres</span><br><span class="line">0         1              ...                Animation|Children&apos;s|Comedy</span><br><span class="line">1         2              ...               Adventure|Children&apos;s|Fantasy</span><br><span class="line">2         3              ...                             Comedy|Romance</span><br><span class="line">3         4              ...                               Comedy|Drama</span><br><span class="line">4         5              ...                                     Comedy</span><br></pre></td></tr></table></figure>
+<p>年龄和职业是以编码形式给出</p>
+<ul>
+<li>Gender is denoted by a “M” for male and “F” for female</li>
+<li>Age is chosen from the following ranges:<ul>
+<li>1:  “Under 18”</li>
+<li>18:  “18-24”</li>
+<li>25:  “25-34”</li>
+<li>35:  “35-44”</li>
+<li>45:  “45-49”</li>
+<li>50:  “50-55”</li>
+<li>56:  “56+”</li>
+</ul>
+</li>
+<li>Occupation is chosen from the following choices:<ul>
+<li>0:  “other” or not specified</li>
+<li>1:  “academic/educator”</li>
+<li>2:  “artist”</li>
+<li>3:  “clerical/admin”</li>
+<li>4:  “college/grad student”</li>
+<li>5:  “customer service”</li>
+<li>6:  “doctor/health care”</li>
+<li>7:  “executive/managerial”</li>
+<li>8:  “farmer”</li>
+<li>9:  “homemaker”</li>
+<li>10:  “K-12 student”</li>
+<li>11:  “lawyer”</li>
+<li>12:  “programmer”</li>
+<li>13:  “retired”</li>
+<li>14:  “sales/marketing”</li>
+<li>15:  “scientist”</li>
+<li>16:  “self-employed”</li>
+<li>17:  “technician/engineer”</li>
+<li>18:  “tradesman/craftsman”</li>
+<li>19:  “unemployed”</li>
+<li>20:  “writer”</li>
+</ul>
+</li>
+</ul>
+<h3 id="数据表合并"><a href="#数据表合并" class="headerlink" title="数据表合并"></a>数据表合并</h3><p>三表合并，分析分散在三个表中的数据不是一件轻松的事。<br>先用pandas的merge函数将ratings跟users合并到一起，然后再将movies也合并进去。pandas会根据列名的重叠情况推断出哪些列是合并键。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">data = pd.merge(pd.merge(ratings,users),movies)</span><br><span class="line">data.ix[0]</span><br><span class="line"></span><br><span class="line">.ix is deprecated. Please use</span><br><span class="line">.loc for label based indexing or</span><br><span class="line">.iloc for positional indexing</span><br><span class="line">data.iloc[0]</span><br><span class="line"></span><br><span class="line">data.iloc[0]</span><br><span class="line">Out[58]: </span><br><span class="line">user_id                                            1</span><br><span class="line">movie_id                                        1193</span><br><span class="line">rating                                             5</span><br><span class="line">timestamp                                  978300760</span><br><span class="line">gender                                             F</span><br><span class="line">age                                                1</span><br><span class="line">occupation                                        10</span><br><span class="line">zip                                            48067</span><br><span class="line">title         One Flew Over the Cuckoo&apos;s Nest (1975)</span><br><span class="line">genres                                         Drama</span><br><span class="line">Name: 0, dtype: object</span><br></pre></td></tr></table></figure>
+<h3 id="统计分析"><a href="#统计分析" class="headerlink" title="统计分析"></a>统计分析</h3><p>按性别计算每部电影的平均得分，使用pivot_table方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">mean_ratings = data.pivot_table(&apos;rating&apos;,index=&apos;title&apos;,columns=&apos;gender&apos;,aggfunc=&apos;mean&apos;)</span><br><span class="line"></span><br><span class="line">mean_ratings[:5]</span><br><span class="line">Out[74]: </span><br><span class="line">gender                                F         M</span><br><span class="line">title                                            </span><br><span class="line">$1,000,000 Duck (1971)         3.375000  2.761905</span><br><span class="line">&apos;Night Mother (1986)           3.388889  3.352941</span><br><span class="line">&apos;Til There Was You (1997)      2.675676  2.733333</span><br><span class="line">&apos;burbs, The (1989)             2.793478  2.962085</span><br><span class="line">...And Justice for All (1979)  3.828571  3.689024</span><br></pre></td></tr></table></figure>
+<p>过滤掉评分数据不够250条的电影。<br>先对title进行分组，然后利用size()得到一个含有各电影分组大小的Series对象：<br>Series.index<br>Series.values<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">ratings_by_title = data.groupby(&apos;title&apos;).size()</span><br><span class="line">ratings_by_title[:10]</span><br><span class="line"></span><br><span class="line">Out[75]: </span><br><span class="line">title</span><br><span class="line">$1,000,000 Duck (1971)                37</span><br><span class="line">&apos;Night Mother (1986)                  70</span><br><span class="line">&apos;Til There Was You (1997)             52</span><br><span class="line">&apos;burbs, The (1989)                   303</span><br><span class="line">...And Justice for All (1979)        199</span><br><span class="line">1-900 (1994)                           2</span><br><span class="line">10 Things I Hate About You (1999)    700</span><br><span class="line">101 Dalmatians (1961)                565</span><br><span class="line">101 Dalmatians (1996)                364</span><br><span class="line">12 Angry Men (1957)                  616</span><br><span class="line">dtype: int64</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">active_titles = ratings_by_title.index[ratings_by_title &gt;=250]</span><br><span class="line">active_titles</span><br><span class="line">Out[83]: </span><br><span class="line">Index([&apos;&apos;burbs, The (1989)&apos;, &apos;10 Things I Hate About You (1999)&apos;,</span><br><span class="line">       &apos;101 Dalmatians (1961)&apos;, &apos;101 Dalmatians (1996)&apos;, &apos;12 Angry Men (1957)&apos;,</span><br><span class="line">       &apos;13th Warrior, The (1999)&apos;, &apos;2 Days in the Valley (1996)&apos;,</span><br><span class="line">       &apos;20,000 Leagues Under the Sea (1954)&apos;, &apos;2001: A Space Odyssey (1968)&apos;,</span><br><span class="line">       &apos;2010 (1984)&apos;,</span><br><span class="line">       ...</span><br><span class="line">       &apos;X-Men (2000)&apos;, &apos;Year of Living Dangerously (1982)&apos;,</span><br><span class="line">       &apos;Yellow Submarine (1968)&apos;, &apos;You&apos;ve Got Mail (1998)&apos;,</span><br><span class="line">       &apos;Young Frankenstein (1974)&apos;, &apos;Young Guns (1988)&apos;,</span><br><span class="line">       &apos;Young Guns II (1990)&apos;, &apos;Young Sherlock Holmes (1985)&apos;,</span><br><span class="line">       &apos;Zero Effect (1998)&apos;, &apos;eXistenZ (1999)&apos;],</span><br><span class="line">      dtype=&apos;object&apos;, name=&apos;title&apos;, length=1216)</span><br></pre></td></tr></table></figure>
+<p>该索引中含有评分数据大于250条的电影名称，然后从mean_ratings中选取所需的行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mean_ratings = mean_ratings.loc[active_titles]</span><br></pre></td></tr></table></figure>
+<p>为了了解女性观众最喜欢的电影，我们可以对F列降序排列：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">top_female_ratings = mean_ratings.sort_values(by=&apos;F&apos;,ascending=False)</span><br><span class="line">top_female_ratings[:10]</span><br><span class="line">Out[98]: </span><br><span class="line">gender                                                     F         M</span><br><span class="line">title                                                                 </span><br><span class="line">Close Shave, A (1995)                               4.644444  4.473795</span><br><span class="line">Wrong Trousers, The (1993)                          4.588235  4.478261</span><br><span class="line">Sunset Blvd. (a.k.a. Sunset Boulevard) (1950)       4.572650  4.464589</span><br><span class="line">Wallace &amp; Gromit: The Best of Aardman Animation...  4.563107  4.385075</span><br><span class="line">Schindler&apos;s List (1993)                             4.562602  4.491415</span><br><span class="line">Shawshank Redemption, The (1994)                    4.539075  4.560625</span><br><span class="line">Grand Day Out, A (1992)                             4.537879  4.293255</span><br><span class="line">To Kill a Mockingbird (1962)                        4.536667  4.372611</span><br><span class="line">Creature Comforts (1990)                            4.513889  4.272277</span><br><span class="line">Usual Suspects, The (1995)                          4.513317  4.518248</span><br></pre></td></tr></table></figure>
+<h3 id="计算评分分歧"><a href="#计算评分分歧" class="headerlink" title="计算评分分歧"></a>计算评分分歧</h3><p>想要找出男性女性观众分歧最大的电影。一个办法是给mean_ratings加上一个用于存放平均得分之差的列，并对其进行排序：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mean_ratings[&apos;diff&apos;] = mean_ratings[&apos;M&apos;] - mean_ratings[&apos;F&apos;]</span><br></pre></td></tr></table></figure>
+<p>按’diff’排序即可得到分歧最大且女性观众更喜欢的电影：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">sorted_by_diff = mean_ratings.sort_values(by=&apos;diff&apos;)</span><br><span class="line">sorted_by_diff[:15]</span><br><span class="line">Out[102]: </span><br><span class="line">gender                                        F         M      diff</span><br><span class="line">title                                                              </span><br><span class="line">Dirty Dancing (1987)                   3.790378  2.959596 -0.830782</span><br><span class="line">Jumpin&apos; Jack Flash (1986)              3.254717  2.578358 -0.676359</span><br><span class="line">Grease (1978)                          3.975265  3.367041 -0.608224</span><br><span class="line">Little Women (1994)                    3.870588  3.321739 -0.548849</span><br><span class="line">Steel Magnolias (1989)                 3.901734  3.365957 -0.535777</span><br><span class="line">Anastasia (1997)                       3.800000  3.281609 -0.518391</span><br><span class="line">Rocky Horror Picture Show, The (1975)  3.673016  3.160131 -0.512885</span><br><span class="line">Color Purple, The (1985)               4.158192  3.659341 -0.498851</span><br><span class="line">Age of Innocence, The (1993)           3.827068  3.339506 -0.487561</span><br><span class="line">Free Willy (1993)                      2.921348  2.438776 -0.482573</span><br><span class="line">French Kiss (1995)                     3.535714  3.056962 -0.478752</span><br><span class="line">Little Shop of Horrors, The (1960)     3.650000  3.179688 -0.470312</span><br><span class="line">Guys and Dolls (1955)                  4.051724  3.583333 -0.468391</span><br><span class="line">Mary Poppins (1964)                    4.197740  3.730594 -0.467147</span><br><span class="line">Patch Adams (1998)                     3.473282  3.008746 -0.464536</span><br></pre></td></tr></table></figure>
+<p>对排序结果反序并取出前15行，得到的则是男性观众更喜欢的电影：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">sorted_by_diff[::-1][:15]</span><br><span class="line">Out[104]: </span><br><span class="line">gender                                         F         M      diff</span><br><span class="line">title                                                               </span><br><span class="line">Good, The Bad and The Ugly, The (1966)  3.494949  4.221300  0.726351</span><br><span class="line">Kentucky Fried Movie, The (1977)        2.878788  3.555147  0.676359</span><br><span class="line">Dumb &amp; Dumber (1994)                    2.697987  3.336595  0.638608</span><br><span class="line">Longest Day, The (1962)                 3.411765  4.031447  0.619682</span><br><span class="line">Cable Guy, The (1996)                   2.250000  2.863787  0.613787</span><br><span class="line">Evil Dead II (Dead By Dawn) (1987)      3.297297  3.909283  0.611985</span><br><span class="line">Hidden, The (1987)                      3.137931  3.745098  0.607167</span><br><span class="line">Rocky III (1982)                        2.361702  2.943503  0.581801</span><br><span class="line">Caddyshack (1980)                       3.396135  3.969737  0.573602</span><br><span class="line">For a Few Dollars More (1965)           3.409091  3.953795  0.544704</span><br><span class="line">Porky&apos;s (1981)                          2.296875  2.836364  0.539489</span><br><span class="line">Animal House (1978)                     3.628906  4.167192  0.538286</span><br><span class="line">Exorcist, The (1973)                    3.537634  4.067239  0.529605</span><br><span class="line">Fright Night (1985)                     2.973684  3.500000  0.526316</span><br><span class="line">Barb Wire (1996)                        1.585366  2.100386  0.515020</span><br></pre></td></tr></table></figure></p>
+<p>如果只是想要找出分歧最大的电影（不考虑性别因素），则可以计算得分数据的方差或标准差：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#根据电影名称分组的得分数据的标准差</span><br><span class="line">rating_std_by_title = data.groupby(&apos;title&apos;)[&apos;rating&apos;].std()</span><br><span class="line">#跟据active_titles进行过滤</span><br><span class="line">rating_std_by_title = rating_std_by_title.iloc[active_titles]</span><br><span class="line">#根据值对Series进行降序排列</span><br><span class="line">rating_std_by_title.sort_values(ascending=False)[:10]</span><br><span class="line">Out[114]: </span><br><span class="line">title</span><br><span class="line">Dumb &amp; Dumber (1994)                     1.321333</span><br><span class="line">Blair Witch Project, The (1999)          1.316368</span><br><span class="line">Natural Born Killers (1994)              1.307198</span><br><span class="line">Tank Girl (1995)                         1.277695</span><br><span class="line">Rocky Horror Picture Show, The (1975)    1.260177</span><br><span class="line">Eyes Wide Shut (1999)                    1.259624</span><br><span class="line">Evita (1996)                             1.253631</span><br><span class="line">Billy Madison (1995)                     1.249970</span><br><span class="line">Fear and Loathing in Las Vegas (1998)    1.246408</span><br><span class="line">Bicentennial Man (1999)                  1.245533</span><br><span class="line">Name: rating, dtype: float64</span><br></pre></td></tr></table></figure>
+<h2 id="1880——2010年间全美婴儿姓名"><a href="#1880——2010年间全美婴儿姓名" class="headerlink" title="1880——2010年间全美婴儿姓名"></a>1880——2010年间全美婴儿姓名</h2><h3 id="数据整合"><a href="#数据整合" class="headerlink" title="数据整合"></a>数据整合</h3><p>由于该数据集按年度被分隔成了多个文件。 所以第一件事情就是要将所有的数据都组装到一个DataFrame里面，并加上一个year字段。使用pandas.concat.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd </span><br><span class="line">import os</span><br><span class="line"></span><br><span class="line">os.chdir(&apos;/Users/yueqiang/Python Coding/python data analysis data/datasets/&apos;)</span><br><span class="line"></span><br><span class="line">years = range(1880,2011)</span><br><span class="line">pieces = []</span><br><span class="line">columns = [&apos;name&apos;,&apos;sex&apos;,&apos;births&apos;]</span><br><span class="line"></span><br><span class="line">for year in years:</span><br><span class="line">    path = &apos;babynames/yob%d.txt&apos; % year</span><br><span class="line">    frame = pd.read_csv(path,names=columns)</span><br><span class="line">    frame[&apos;year&apos;] = year</span><br><span class="line">    pieces.append(frame)</span><br><span class="line">names = pd.concat(pieces,ignore_index=True)</span><br></pre></td></tr></table></figure>
+<h3 id="数据聚合"><a href="#数据聚合" class="headerlink" title="数据聚合"></a>数据聚合</h3><p>利用groupby或pivot_table在year和sex级别上对其进行聚合。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">total_births = names.pivot_table(&apos;births&apos;,index=&apos;year&apos;,columns=&apos;sex&apos;,aggfunc=sum)</span><br><span class="line">total_births.tail()</span><br><span class="line">Out[122]: </span><br><span class="line">sex         F        M</span><br><span class="line">year                  </span><br><span class="line">2006  1896468  2050234</span><br><span class="line">2007  1916888  2069242</span><br><span class="line">2008  1883645  2032310</span><br><span class="line">2009  1827643  1973359</span><br><span class="line">2010  1759010  1898382</span><br><span class="line"></span><br><span class="line">total_births.plot(title=&apos;Total births by sex and year&apos;)</span><br></pre></td></tr></table></figure>
+<p><img src="/img/image3.png" alt="image"></p>
+<p>插入一个prop列，用于存放指定名字的婴儿数相对于总出生数的比例。prop值为0.02表示每100名婴儿中有2名取了当前这个名字。先按year和sex分组然后再将新列加到各个分组上。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">names = names.groupby([&apos;year&apos;,&apos;sex&apos;]).apply(add_prop)</span><br><span class="line">names.head(10)</span><br></pre></td></tr></table></figure>
+<p>在执行这样的分组处理时，一般都应该做一些有效性检查，比如验证所有的分组的prop的总和是否为1。由于这是一个浮点型数据，所以我们应该用np.allclose来检查这个分组总计值是否足够近似于（可能不会精确等于）1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">np.allclose(names.groupby([&apos;year&apos;,&apos;sex&apos;]).prop.sum(),1)</span><br><span class="line">Out[139]: True</span><br></pre></td></tr></table></figure>
+<p>为了便于实现更进一步的分析，需要取出该数据的一个子集；每对sex/year组合的前1000个名字。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def get_top1000(group):</span><br><span class="line">    return group.sort_index(by=&apos;births&apos;,ascending = False)[:1000]</span><br><span class="line"></span><br><span class="line">top1000 = names.groupby([&apos;year&apos;,&apos;sex&apos;]).apply(get_top1000)</span><br></pre></td></tr></table></figure>
+<p>将前1000个名字分为男女两个部分：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">boys = top1000[top1000.sex == &apos;M&apos;]</span><br><span class="line">girls = top1000[top1000.sex == &apos;F&apos;]</span><br></pre></td></tr></table></figure>
+<p>生成一张按year和name统计的总出生数透视表：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">total_births = top1000.pivot_table(&apos;births&apos;,index = &apos;year&apos;,columns = &apos;name&apos;,aggfunc = sum)</span><br><span class="line">#每年叫做John和Mary的婴儿数</span><br><span class="line">subset = total_births[[&apos;John&apos;,&apos;Harry&apos;,&apos;Mary&apos;,&apos;Marilyn&apos;]]</span><br><span class="line">subset.plot(subplots=True,figsize=(12,10),grid=False,title=&quot;Number of births per year&quot;)</span><br></pre></td></tr></table></figure></p>
+<p><img src="/img/image4.png" alt="image"></p>
+<p>图2-5 几个男孩和女孩名字随时间变化的使用数量。</p>
+<p>这几个名字在美国人民的心目中已经风光不再了。但事实并非如此。</p>
+<h3 id="评估命名多样性的成长"><a href="#评估命名多样性的成长" class="headerlink" title="评估命名多样性的成长"></a>评估命名多样性的成长</h3><p>图2-5所反映的降低情况可能意味着父母愿意给小孩起常见的名字越来越少。这个假设可以从数据中得到验证。一个办法是计算最流行的1000个名字所占的比例，我按year和sex进行聚合并绘图：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">table = top1000.pivot_table(&apos;prop&apos;,index=&apos;year&apos;,columns=&apos;sex&apos;,aggfunc=sum)</span><br><span class="line">table.plot(title=&apos;Sum of table1000.prop by year and sex&apos;,yticks=np.linspace(0,1.2,13),xticks=range(1880,2020,10))</span><br></pre></td></tr></table></figure>
+<p><img src="/img/image5.png" alt="image"></p>
+<p>图2-6:分别统计的前1000个名字在总出生人数中的比例</p>
+<p>从图2-6可以看出，名字的多样性确实出现了增长（前1000项的比例降低）。<br>另一种方式是计算占总出生人数前50%的不同名字的数量，这个数字不太好计算。只考虑2010年男孩的名字：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df = boys[boys.year == 2010]</span><br></pre></td></tr></table></figure>
+<p>在对prop降序排列之后，我们想知道前面多少个名字的人数加起来才够50%。虽然编写一个for循环确实也能达到目的，但Numpy有一种更聪明的矢量方式。先计算prop的累计和cumsum,然后再通过searchsorted方法找出0.5应该被插入在哪个位置才能保证不破坏顺序。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">prop_cumsum = df.sort_values(by=&apos;prop&apos;,ascending=False).prop.cumsum()</span><br><span class="line">prop_cumsum[:10]</span><br><span class="line">Out[150]: </span><br><span class="line">year  sex         </span><br><span class="line">2010  M    1676644    0.011523</span><br><span class="line">           1676645    0.020934</span><br><span class="line">           1676646    0.029959</span><br><span class="line">           1676647    0.038930</span><br><span class="line">           1676648    0.047817</span><br><span class="line">           1676649    0.056579</span><br><span class="line">           1676650    0.065155</span><br><span class="line">           1676651    0.073414</span><br><span class="line">           1676652    0.081528</span><br><span class="line">           1676653    0.089621</span><br><span class="line">Name: prop, dtype: float64</span><br><span class="line">prop_cumsum.searchsorted(0.5)</span><br><span class="line">Out[151]: array([116])</span><br></pre></td></tr></table></figure>
+<p>由于索引是从0开始的，因此我们要给这个结果加1，即最终结果为117。拿1900年的数据来做个比较，这个数字要小得多：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">df = boys[boys.year == 1900]</span><br><span class="line">in1900 = df.sort_values(by=&apos;prop&apos;,ascending=False).prop.cumsum()</span><br><span class="line">in1900.searchsorted(0.5) + 1</span><br><span class="line">Out[159]: array([25])</span><br></pre></td></tr></table></figure>
+<p>现在就可以对所有的year/sex组合执行这个计算了。按这两个字段进行groupby处理，然后用一个函数计算各分组的这个值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def get_quantile_count(group,q=0.5):</span><br><span class="line">    group = group.sort_values(by=&apos;prop&apos;,ascending=False)</span><br><span class="line">    return group.prop.cumsum().searchsorted(q) + 1</span><br><span class="line">    </span><br><span class="line">diversity = top1000.groupby([&apos;year&apos;,&apos;sex&apos;]).apply(get_quantile_count)</span><br><span class="line">diversity = diversity.unstack(&apos;sex&apos;)</span><br></pre></td></tr></table></figure>
+<p>diversity这个DataFrame拥有两个时间序列（每个性别各一个，按年度索引）。<br>通过IPython,你可以查看其内容，还可以像之前那样绘制图表（如图2-7所示）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">diversity.head()</span><br><span class="line">Out[172]: </span><br><span class="line">sex    F   M</span><br><span class="line">year        </span><br><span class="line">1880  38  14</span><br><span class="line">1881  38  14</span><br><span class="line">1882  38  15</span><br><span class="line">1883  39  15</span><br><span class="line">1884  39  16</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diversity.plot(title=&apos;Number of popular names in top 50%&apos;)</span><br></pre></td></tr></table></figure>
+<p><img src="/img/image6.png" alt="image"></p>
+<p>图2-7:按年度统计的密度表</p>
+<p>从图可以看出，女孩名字的多样性总是比男孩的高，而且还在变得越来越高。</p>
+<h3 id="“最后一个字母”的变革"><a href="#“最后一个字母”的变革" class="headerlink" title="“最后一个字母”的变革"></a>“最后一个字母”的变革</h3><p>近百年来，男孩的名字在最后一个字母上的分布发生了显著的变化。为了了解具体的情况，我首先将全部出生数据在年度、性别以及末字母上进行了聚合：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#从name列取出最后一个字母</span><br><span class="line">get_last_letter = lambda x:x[-1]</span><br><span class="line">last_letter = names.name.map(get_last_letter)</span><br><span class="line">last_letter.name = &apos;last_letter&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">subtable = table.reindex(columns=[1910,1960,2010],level=&apos;year&apos;)</span><br><span class="line">subtable.head()</span><br><span class="line">Out[180]: </span><br><span class="line">sex                 F                            M                    </span><br><span class="line">year             1910      1960      2010     1910      1960      2010</span><br><span class="line">last_letter                                                           </span><br><span class="line">a            108376.0  691247.0  670605.0    977.0    5204.0   28438.0</span><br><span class="line">b                 NaN     694.0     450.0    411.0    3912.0   38859.0</span><br><span class="line">c                 5.0      49.0     946.0    482.0   15476.0   23125.0</span><br><span class="line">d              6750.0    3729.0    2607.0  22111.0  262112.0   44398.0</span><br><span class="line">e            133569.0  435013.0  313833.0  28655.0  178823.0  129012.0</span><br></pre></td></tr></table></figure>
+<p>接下来需要按总出生数对表进行规范化处理，以便计算出各性别各末字母占总出生人数的比例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">subtable.sum()</span><br><span class="line">Out[188]: </span><br><span class="line">sex  year</span><br><span class="line">F    1910     396416.0</span><br><span class="line">     1960    2022062.0</span><br><span class="line">     2010    1759010.0</span><br><span class="line">M    1910     194198.0</span><br><span class="line">     1960    2132588.0</span><br><span class="line">     2010    1898382.0</span><br><span class="line">dtype: float64</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">letter_prop = subtable/subtable.sum().astype(float)</span><br></pre></td></tr></table></figure>
+<p>有了这个字母比例数据之后，就可以生成一张各年度各性别的条形图了，如图2-8所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import matplotlib.pyplot as plt </span><br><span class="line">fig,axes = plt.subplots(2,1,figsize=(10,8))</span><br><span class="line">letter_prop[&apos;M&apos;].plot(kind=&apos;bar&apos;,rot=0,ax=axes[0],title=&apos;Male&apos;)</span><br><span class="line">letter_prop[&apos;F&apos;].plot(kind=&apos;bar&apos;,rot=0,ax=axes[0],title=&apos;Female&apos;,legend=False)</span><br></pre></td></tr></table></figure>
+<p><img src="/img/image7.png" alt="image"></p>
+<p>图2-8:男孩女孩名字中各个末字母的比例</p>
+<p>从图2-8中可以看出，从20世纪60年代开始，以字母‘n’结尾的男孩名字出现了显著的增长。</p>
+<p>回到之前创建的那个完整表，按年度和性别对其进行规范化处理，并在男孩名字中选取几个名字，最后进行转置以便将各个列做成一个时间序列：</p>
+<p>letter_prop = table/table.sum().astype(float)<br>dny_ts = letter_prop.loc[[‘d’,’n’,’y’],’M’].T<br>dny_ts.head()</p>
+<p>有了这个时间序列的DataFrame之后，就可以通过其plot方法绘制出一张趋势图了（如图2-9所示）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dny_ts.plot()</span><br></pre></td></tr></table></figure>
+<p><img src="/img/image8.png" alt="image"></p>
+<p>图2-9:各年出生的男孩中名字以d/n/y结尾的人数比例</p>
+<h3 id="变成女孩名字的男孩名字（以及相反的情况）"><a href="#变成女孩名字的男孩名字（以及相反的情况）" class="headerlink" title="变成女孩名字的男孩名字（以及相反的情况）"></a>变成女孩名字的男孩名字（以及相反的情况）</h3><p>另一个有趣的趋势是，早年流行于男孩的名字今年来“变性了”，例如Lesley或Leslie。回到top1000数据集，找出其中以”lesl”开头的一组名字：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">all_names = top1000.name.unique()</span><br><span class="line">mask = np.array([&apos;lesl&apos;] in x.lower() for x in all_names])</span><br><span class="line">lesley_like = all_name[mask]</span><br><span class="line">lesley_like</span><br><span class="line">Out[207]: array([&apos;Leslie&apos;, &apos;Lesley&apos;, &apos;Leslee&apos;, &apos;Lesli&apos;, &apos;Lesly&apos;], dtype=object)</span><br></pre></td></tr></table></figure>
+<p>然后利用这个结果过滤其他的名字，并按名字分组计算出生数以查看相对频率：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">filtered = top1000[top1000.name.isin(lesley_like)]</span><br><span class="line">filtered.groupby(&apos;name&apos;).births.sum()</span><br><span class="line">Out[208]: </span><br><span class="line">name</span><br><span class="line">Leslee      1082</span><br><span class="line">Lesley     35022</span><br><span class="line">Lesli        929</span><br><span class="line">Leslie    370429</span><br><span class="line">Lesly      10067</span><br><span class="line">Name: births, dtype: int64</span><br></pre></td></tr></table></figure>
+<p>接下来，我们按姓名和年度进行聚合，并按年度进行规范化处理：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">table = filterd.pivot_table(&apos;births&apos;,index=&apos;year&apos;,columns=&apos;sex&apos;,aggfunc=&apos;sum&apos;)</span><br><span class="line">table = table.div(table.sum(1),axis=0)</span><br><span class="line">table.tail()</span><br><span class="line">Out[213]: </span><br><span class="line">sex     F   M</span><br><span class="line">year         </span><br><span class="line">2006  1.0 NaN</span><br><span class="line">2007  1.0 NaN</span><br><span class="line">2008  1.0 NaN</span><br><span class="line">2009  1.0 NaN</span><br><span class="line">2010  1.0 NaN</span><br></pre></td></tr></table></figure>
+<p>绘制一张分性别的年度曲线图<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">table.plot(style=&#123;&apos;M&apos;:&apos;k-&apos;,&apos;F&apos;:&apos;k--&apos;&#125;)</span><br></pre></td></tr></table></figure></p>
+<p><img src="/img/image9.png" alt="image"></p>
+<p>图2-10:各年度使用“Lesley型”名字的男女比例</p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/07/17/利用python进行数据分析/">Python for Data Analysis</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Yue Dandy 的个人博客">Yue Dandy</a></p>
+        <p><span>发布时间:</span>2018年07月18日 - 10时20分</p>
+        <p><span>最后更新:</span>2020年11月28日 - 15时34分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/07/17/利用python进行数据分析/" title="Python for Data Analysis">http://github.com/lzxyzq/2018/07/17/利用python进行数据分析/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://github.com/lzxyzq/2018/07/17/利用python进行数据分析/　　作者: Yue Dandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2018/10/24/计算机网络/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          计算机网络
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/24/精益数据分析/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">精益数据分析</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ch02"><span class="toc-number">1.</span> <span class="toc-text">ch02</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#来自bit-ly的1-usa-gov数据"><span class="toc-number">1.1.</span> <span class="toc-text">来自bit.ly的1.usa.gov数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#列表推导式，后加-if-判断字段是否存在"><span class="toc-number">1.1.1.</span> <span class="toc-text">列表推导式，后加 if 判断字段是否存在</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对时区计数——pandas库"><span class="toc-number">1.1.2.</span> <span class="toc-text">对时区计数——pandas库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前十位的时区及其计数"><span class="toc-number">1.1.3.</span> <span class="toc-text">前十位的时区及其计数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用collections-Counter类计数更加方便"><span class="toc-number">1.1.4.</span> <span class="toc-text">使用collections.Counter类计数更加方便</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用pandas对时区进行计数"><span class="toc-number">1.1.5.</span> <span class="toc-text">用pandas对时区进行计数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#matplotlib数据可视化"><span class="toc-number">1.1.6.</span> <span class="toc-text">matplotlib数据可视化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对分组结果进行计数，并利用unstack对计数结果进行重塑"><span class="toc-number">1.1.7.</span> <span class="toc-text">对分组结果进行计数，并利用unstack对计数结果进行重塑</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MovieLens-1M-数据集"><span class="toc-number">1.2.</span> <span class="toc-text">MovieLens 1M 数据集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据导入"><span class="toc-number">1.2.1.</span> <span class="toc-text">数据导入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据表合并"><span class="toc-number">1.2.2.</span> <span class="toc-text">数据表合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#统计分析"><span class="toc-number">1.2.3.</span> <span class="toc-text">统计分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计算评分分歧"><span class="toc-number">1.2.4.</span> <span class="toc-text">计算评分分歧</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1880——2010年间全美婴儿姓名"><span class="toc-number">1.3.</span> <span class="toc-text">1880——2010年间全美婴儿姓名</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据整合"><span class="toc-number">1.3.1.</span> <span class="toc-text">数据整合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据聚合"><span class="toc-number">1.3.2.</span> <span class="toc-text">数据聚合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#评估命名多样性的成长"><span class="toc-number">1.3.3.</span> <span class="toc-text">评估命名多样性的成长</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#“最后一个字母”的变革"><span class="toc-number">1.3.4.</span> <span class="toc-text">“最后一个字母”的变革</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变成女孩名字的男孩名字（以及相反的情况）"><span class="toc-number">1.3.5.</span> <span class="toc-text">变成女孩名字的男孩名字（以及相反的情况）</span></a></li></ol></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2018/07/17/利用python进行数据分析/" data-title="Python for Data Analysis" data-url="http://github.com/lzxyzq/2018/07/17/利用python进行数据分析/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lzxyzq"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/10/24/计算机网络/" title="上一篇: 计算机网络">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2018/06/24/精益数据分析/" title="下一篇: 精益数据分析">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/06/13/An-Introduction-of-Statistical-Learning/">An Introduction of Statistical Learning</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/25/Principle_of_Operating_System/">操作系统原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/03/book_python_practice_of_data_analysis_and_mining/">python数据分析与挖掘实战——张良均</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/29/线性回归/">Logistic Regression, LDA QDA and KNN</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/25/用数据讲故事/">Storytelling with Data</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/24/计算机网络/">计算机网络</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/17/利用python进行数据分析/">Python for Data Analysis</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/24/精益数据分析/">精益数据分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/02/从Excel到Python——数据分析/">From Excel to Python——Data Analysis</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/31/Python文件读取/">Python文件读取</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/31/Python函数使用/">Python函数使用</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+
+
+   <div id="lv-container" data-id="city" data-uid="MTAyMC80MTczOS8xODI4NQ==">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+   </div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2021 Yue Dandy
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank"></a>Created
+                <a href="https://github.com/lzxyzq/hexo-theme-spfk" target="_blank"></a> by lzxyzq
+            </div>
+        </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>

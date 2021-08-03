@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python文件读取 | Dandy Yue</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="对文件的基本操作一共有如下四种：">
+<meta name="keywords" content="文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python文件读取">
+<meta property="og:url" content="http://github.com/lzxyzq/2018/05/31/Python文件读取/index.html">
+<meta property="og:site_name" content="Dandy Yue">
+<meta property="og:description" content="对文件的基本操作一共有如下四种：">
+<meta property="og:locale" content="en-gb">
+<meta property="og:updated_time" content="2018-05-31T13:50:52.099Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python文件读取">
+<meta name="twitter:description" content="对文件的基本操作一共有如下四种：">
+  
+    <link rel="alternative" href="/atom.xml" title="Dandy Yue" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: true
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Yue Dandy</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">Sense and Simplicity</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>
+        
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home/H1/index.html">Home</a></li>
+                        
+                            <li><a href="/About">Projects</a></li>
+                        
+                            <li><a href="https://app.gitbook.com/@lzxyzq/s/data-structure-and-algorithms/">Notes</a></li>
+                        
+                            <li><a href="/archives">Articles</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/lzxyzq/" title="github">github</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="https://www.linkedin.com/in/qiangyue/" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/lzxyzq/">Github</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://lzxyzq.gitbook.io/data-structure-and-algorithms/">Gitbook</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Yue Dandy</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Yue Dandy</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">Sense and Simplicity</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home/H1/index.html">Home</a></li>
+                
+                    <li><a href="/About">Projects</a></li>
+                
+                    <li><a href="https://app.gitbook.com/@lzxyzq/s/data-structure-and-algorithms/">Notes</a></li>
+                
+                    <li><a href="/archives">Articles</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/lzxyzq/" title="github">github</a>
+                    
+                        <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/qiangyue/" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Python文件读取" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/31/Python文件读取/" class="article-date">
+      <time datetime="2018-05-31T09:48:13.000Z" itemprop="datePublished">2018-05-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python文件读取
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/文件/">文件</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="对文件的基本操作一共有如下四种："><a href="#对文件的基本操作一共有如下四种：" class="headerlink" title="对文件的基本操作一共有如下四种："></a>对文件的基本操作一共有如下四种：</h2><a id="more"></a>
+<h3 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file_obj = open(&quot;文件路径&quot;,&quot;模式&quot;)</span><br></pre></td></tr></table></figure>
+<p> <strong>常用的打开文件模式有：</strong></p>
+<ul>
+<li>r：以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。</li>
+<li>w：打开一个文件只用于写入。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</li>
+<li>a：打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</li>
+<li>w+：打开一个文件用于读写。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</li>
+</ul>
+<h3 id="读取文件的内容"><a href="#读取文件的内容" class="headerlink" title="读取文件的内容"></a>读取文件的内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">obj.read()：一次性加载所有内容到内存</span><br><span class="line">obj.readLines()：一次性加载所有内容到内存，并根据行分割成字符串</span><br><span class="line">for line in obj:</span><br><span class="line">    print line</span><br><span class="line">    #每次仅读取一行数据</span><br></pre></td></tr></table></figure>
+<h3 id="写文件的内容"><a href="#写文件的内容" class="headerlink" title="写文件的内容"></a>写文件的内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj.write(&apos;内容&apos;)：给文件写入内容</span><br></pre></td></tr></table></figure>
+<h3 id="关闭文件句柄"><a href="#关闭文件句柄" class="headerlink" title="关闭文件句柄"></a>关闭文件句柄</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj.close()：关闭文件</span><br></pre></td></tr></table></figure>
+<h2 id="常见用法："><a href="#常见用法：" class="headerlink" title="常见用法："></a>常见用法：</h2><ul>
+<li>读</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">obj = open(&quot;test.log&quot;,&quot;r&quot;)</span><br><span class="line">    for line in obj:</span><br><span class="line">        print(line)</span><br><span class="line">obj.close()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>写</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">obj = open(&quot;test.log&quot;,&quot;w&quot;)</span><br><span class="line">obj.write(&quot;This is the first line\n&quot;)</span><br><span class="line">obj.write(&quot;This is the second line\n&quot;)</span><br><span class="line">obj.close()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>追加</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">obj = open(&quot;test.log&quot;,&quot;a&quot;)</span><br><span class="line">obj.write(&quot;This is the three line\n&quot;)</span><br><span class="line">obj.close()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>写读</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">obj = open(&quot;test.log&quot;,&quot;w+&quot;)</span><br><span class="line">obj.write(&quot;new line\n&quot;)</span><br><span class="line">print(&quot;data:&quot;,obj.read())</span><br><span class="line">obj.close()</span><br></pre></td></tr></table></figure>
+<h2 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h2><ul>
+<li>读写文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">def readFile(filename):</span><br><span class="line">    file = open(filename,&apos;rb&apos;)</span><br><span class="line">        data=file.readlines()</span><br><span class="line">        file.close()</span><br><span class="line">        return data</span><br><span class="line"></span><br><span class="line">def writeFile(filename,data):</span><br><span class="line">    file= open(filename,&apos;wb&apos;)</span><br><span class="line">        file.write(data)</span><br><span class="line">        file.close()</span><br><span class="line">        print &apos;File had been writed Succed!&apos;</span><br><span class="line"></span><br><span class="line">if __name__==&quot;__main__&quot;:</span><br><span class="line">    sourcefile = &apos;./b.py&apos;</span><br><span class="line">        outputfile = &apos;./target.txt&apos;</span><br><span class="line">        writeFile(outputfile,readFile(sourcefile))</span><br><span class="line">        print &apos;end!&apos;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>获取文件夹下所有的文件名</li>
+<li>os.walk()<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def file_name(file_dir):   </span><br><span class="line">    for root, dirs, files in os.walk(file_dir):  </span><br><span class="line">        print(root) #当前目录路径  </span><br><span class="line">        print(dirs) #当前路径下所有子目录  </span><br><span class="line">        print(files) #当前路径下所有非目录子文件</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def file_name(file_dir):   </span><br><span class="line">    L=[]   </span><br><span class="line">    for root, dirs, files in os.walk(file_dir):  </span><br><span class="line">        for file in files:  </span><br><span class="line">            if os.path.splitext(file)[1] == &apos;.csv&apos;:  </span><br><span class="line">                L.append(os.path.join(root, file))  </span><br><span class="line">    return L  </span><br><span class="line"></span><br><span class="line"># 其中os.path.splitext()函数将路径拆分为文件名+扩展名</span><br></pre></td></tr></table></figure>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/05/31/Python文件读取/">Python文件读取</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Yue Dandy 的个人博客">Yue Dandy</a></p>
+        <p><span>发布时间:</span>2018年05月31日 - 17时48分</p>
+        <p><span>最后更新:</span>2018年05月31日 - 09时50分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/05/31/Python文件读取/" title="Python文件读取">http://github.com/lzxyzq/2018/05/31/Python文件读取/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://github.com/lzxyzq/2018/05/31/Python文件读取/　　作者: Yue Dandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2018/06/02/从Excel到Python——数据分析/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          From Excel to Python——Data Analysis
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/31/Python函数使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python函数使用</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#对文件的基本操作一共有如下四种："><span class="toc-number">1.</span> <span class="toc-text">对文件的基本操作一共有如下四种：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#打开文件"><span class="toc-number">1.1.</span> <span class="toc-text">打开文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#读取文件的内容"><span class="toc-number">1.2.</span> <span class="toc-text">读取文件的内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#写文件的内容"><span class="toc-number">1.3.</span> <span class="toc-text">写文件的内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关闭文件句柄"><span class="toc-number">1.4.</span> <span class="toc-text">关闭文件句柄</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见用法："><span class="toc-number">2.</span> <span class="toc-text">常见用法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实战"><span class="toc-number">3.</span> <span class="toc-text">实战</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2018/05/31/Python文件读取/" data-title="Python文件读取" data-url="http://github.com/lzxyzq/2018/05/31/Python文件读取/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lzxyzq"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/06/02/从Excel到Python——数据分析/" title="上一篇: From Excel to Python——Data Analysis">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2018/05/31/Python函数使用/" title="下一篇: Python函数使用">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/06/13/An-Introduction-of-Statistical-Learning/">An Introduction of Statistical Learning</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/25/Principle_of_Operating_System/">操作系统原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/03/book_python_practice_of_data_analysis_and_mining/">python数据分析与挖掘实战——张良均</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/29/线性回归/">Logistic Regression, LDA QDA and KNN</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/25/用数据讲故事/">Storytelling with Data</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/24/计算机网络/">计算机网络</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/17/利用python进行数据分析/">Python for Data Analysis</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/24/精益数据分析/">精益数据分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/02/从Excel到Python——数据分析/">From Excel to Python——Data Analysis</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/31/Python文件读取/">Python文件读取</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/31/Python函数使用/">Python函数使用</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+
+
+   <div id="lv-container" data-id="city" data-uid="MTAyMC80MTczOS8xODI4NQ==">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+   </div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2021 Yue Dandy
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank"></a>Created
+                <a href="https://github.com/lzxyzq/hexo-theme-spfk" target="_blank"></a> by lzxyzq
+            </div>
+        </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>

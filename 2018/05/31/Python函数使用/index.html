@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python函数使用 | Dandy Yue</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="enumerate()使用">
+<meta name="keywords" content="函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python函数使用">
+<meta property="og:url" content="http://github.com/lzxyzq/2018/05/31/Python函数使用/index.html">
+<meta property="og:site_name" content="Dandy Yue">
+<meta property="og:description" content="enumerate()使用">
+<meta property="og:locale" content="en-gb">
+<meta property="og:image" content="https://note.youdao.com/yws/public/resource/e483d672502d54e37ef43c44059eb344/xmlnote/BA41B07624CB4BBEA5EEA347130F5536/3610">
+<meta property="og:updated_time" content="2018-06-01T09:49:17.825Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python函数使用">
+<meta name="twitter:description" content="enumerate()使用">
+<meta name="twitter:image" content="https://note.youdao.com/yws/public/resource/e483d672502d54e37ef43c44059eb344/xmlnote/BA41B07624CB4BBEA5EEA347130F5536/3610">
+  
+    <link rel="alternative" href="/atom.xml" title="Dandy Yue" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: true
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Yue Dandy</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">Sense and Simplicity</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>
+        
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home/H1/index.html">Home</a></li>
+                        
+                            <li><a href="/About">Projects</a></li>
+                        
+                            <li><a href="https://app.gitbook.com/@lzxyzq/s/data-structure-and-algorithms/">Notes</a></li>
+                        
+                            <li><a href="/archives">Articles</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/lzxyzq/" title="github">github</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="https://www.linkedin.com/in/qiangyue/" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/lzxyzq/">Github</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://lzxyzq.gitbook.io/data-structure-and-algorithms/">Gitbook</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Yue Dandy</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Yue Dandy</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">Sense and Simplicity</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home/H1/index.html">Home</a></li>
+                
+                    <li><a href="/About">Projects</a></li>
+                
+                    <li><a href="https://app.gitbook.com/@lzxyzq/s/data-structure-and-algorithms/">Notes</a></li>
+                
+                    <li><a href="/archives">Articles</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/lzxyzq/" title="github">github</a>
+                    
+                        <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/qiangyue/" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Python函数使用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/31/Python函数使用/" class="article-date">
+      <time datetime="2018-05-31T09:20:35.000Z" itemprop="datePublished">2018-05-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python函数使用
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数/">函数</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="enumerate-使用"><a href="#enumerate-使用" class="headerlink" title="enumerate()使用"></a>enumerate()使用</h1><a id="more"></a>
+<ul>
+<li>如果对一个列表，既要遍历索引又要遍历元素时，首先可以这样写：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list1 = [<span class="string">"这"</span>, <span class="string">"是"</span>, <span class="string">"一个"</span>, <span class="string">"测试"</span>] </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range (len(list1)): </span><br><span class="line">        <span class="keyword">print</span> i ,list1[i]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>上述方法有些累赘，利用enumerate()会更加直接和优美：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">list1 = [&quot;这&quot;, &quot;是&quot;, &quot;一个&quot;, &quot;测试&quot;] </span><br><span class="line">for index, item in enumerate(list1): </span><br><span class="line">        print index, item </span><br><span class="line">&gt;&gt;&gt; </span><br><span class="line">0 这 </span><br><span class="line">1 是</span><br><span class="line">2 一个 </span><br><span class="line">3 测试</span><br></pre></td></tr></table></figure>
+<ul>
+<li>enumerate还可以接收第二个参数，用于指定索引起始值，如：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">list1 = [&quot;这&quot;, &quot;是&quot;, &quot;一个&quot;, &quot;测试&quot;] </span><br><span class="line">for index, item in enumerate(list1, 1): </span><br><span class="line">    print index, item </span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">1 这 </span><br><span class="line">2 是 </span><br><span class="line">3 一个 </span><br><span class="line">4 测试</span><br></pre></td></tr></table></figure>
+<h1 id="stack-和-unstack-的用法"><a href="#stack-和-unstack-的用法" class="headerlink" title="stack() 和 unstack()的用法"></a>stack() 和 unstack()的用法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import pandas as pd</span><br><span class="line"></span><br><span class="line">data=pd.DataFrame(np.arange(6).reshape((3,2)),index=pd.Index([&apos;a&apos;,&apos;b&apos;,&apos;c&apos;],name=&apos;state&apos;),columns=pd.Index([&apos;I&apos;,&apos;II&apos;],name=&apos;number&apos;))</span><br><span class="line">data</span><br><span class="line">Out[627]: </span><br><span class="line">number  I  II</span><br><span class="line">state        </span><br><span class="line">a       0   1</span><br><span class="line">b       2   3</span><br><span class="line">c       4   5</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">result=data.unstack()</span><br><span class="line">result</span><br><span class="line">Out[628]: </span><br><span class="line">number  state</span><br><span class="line">I       a        0</span><br><span class="line">        b        2</span><br><span class="line">        c        4</span><br><span class="line">II      a        1</span><br><span class="line">        b        3</span><br><span class="line">        c        5</span><br></pre></td></tr></table></figure>
+<ul>
+<li>type(result) #pandas.core.series.Series。 DataFrame 被 stack成拥有二重MultiIndex的Series。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">df=pd.DataFrame(&#123;&apos;left&apos;:result,&apos;right&apos;:result+5&#125;,columns=pd.Index([&apos;left&apos;,&apos;right&apos;],name=&apos;side&apos;))</span><br><span class="line">df</span><br><span class="line">Out[630]: </span><br><span class="line">side          left  right</span><br><span class="line">number state             </span><br><span class="line">I      a         0      5</span><br><span class="line">       b         2      7</span><br><span class="line">       c         4      9</span><br><span class="line">II     a         1      6</span><br><span class="line">       b         3      8</span><br><span class="line">       c         5     10</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">df.stack() </span><br><span class="line">Out[633]: </span><br><span class="line">number  state  side </span><br><span class="line">I       a      left      0</span><br><span class="line">               right     5</span><br><span class="line">        b      left      2</span><br><span class="line">               right     7</span><br><span class="line">        c      left      4</span><br><span class="line">               right     9</span><br><span class="line">II      a      left      1</span><br><span class="line">               right     6</span><br><span class="line">        b      left      3</span><br><span class="line">               right     8</span><br><span class="line">        c      left      5</span><br><span class="line">               right    10</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>结果是一个三重index的series</p>
+</li>
+<li><p>如果想把side作为列变量，那就stack(‘side’)</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">df.stack().unstack(&apos;side&apos;) </span><br><span class="line">Out[636]: </span><br><span class="line">side          left  right</span><br><span class="line">number state             </span><br><span class="line">I      a         0      5</span><br><span class="line">       b         2      7</span><br><span class="line">       c         4      9</span><br><span class="line">II     a         1      6</span><br><span class="line">       b         3      8</span><br><span class="line">       c         5     10</span><br></pre></td></tr></table></figure>
+<ul>
+<li>df.unstack(‘number’).stack(‘number’) #更改了multiindex的顺序。先把’number’作为列的index，再拿下来作为行的index，就更改了在index中出现的顺序。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Out[638]: </span><br><span class="line">side          left  right</span><br><span class="line">state number             </span><br><span class="line">a     I          0      5</span><br><span class="line">      II         1      6</span><br><span class="line">b     I          2      7</span><br><span class="line">      II         3      8</span><br><span class="line">c     I          4      9</span><br><span class="line">      II         5     10</span><br></pre></td></tr></table></figure>
+<h1 id="drop-duplicates-函数去重"><a href="#drop-duplicates-函数去重" class="headerlink" title="drop_duplicates() 函数去重"></a>drop_duplicates() 函数去重</h1><h1 id="过滤"><a href="#过滤" class="headerlink" title="过滤"></a>过滤</h1><ul>
+<li>行过滤</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">例如，我们需要过滤掉appPlatform=2而且appID=278和appID=382的样本呢？非常简单。</span><br><span class="line"></span><br><span class="line">data[(True-data[&apos;appID&apos;].isin([278,382]))&amp;(True-data[&apos;appPlatform&apos;].isin([2]))]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>过滤掉某个范围的值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">对于数据集data，我们想过滤掉creativeID（第一列）中ID值大于10000的样本。</span><br><span class="line"></span><br><span class="line">data[data[&apos;creativeID&apos;]&lt;=10000]</span><br></pre></td></tr></table></figure>
+<h1 id="浮点小数位数处理"><a href="#浮点小数位数处理" class="headerlink" title="浮点小数位数处理"></a>浮点小数位数处理</h1><ul>
+<li>round（）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; df = pd.DataFrame(np.random.random([3, 3]),</span><br><span class="line">...     columns=[&apos;A&apos;, &apos;B&apos;, &apos;C&apos;], index=[&apos;first&apos;, &apos;second&apos;, &apos;third&apos;])</span><br><span class="line">&gt;&gt;&gt; df</span><br><span class="line">               A         B         C</span><br><span class="line">first   0.028208  0.992815  0.173891</span><br><span class="line">second  0.038683  0.645646  0.577595</span><br><span class="line">third   0.877076  0.149370  0.491027</span><br><span class="line">&gt;&gt;&gt; df.round(2)</span><br><span class="line">           A     B     C</span><br><span class="line">first   0.03  0.99  0.17</span><br><span class="line">second  0.04  0.65  0.58</span><br><span class="line">third   0.88  0.15  0.49</span><br><span class="line">&gt;&gt;&gt; df.round(&#123;&apos;A&apos;: 1, &apos;C&apos;: 2&#125;)</span><br><span class="line">          A         B     C</span><br><span class="line">first   0.0  0.992815  0.17</span><br><span class="line">second  0.0  0.645646  0.58</span><br><span class="line">third   0.9  0.149370  0.49</span><br><span class="line">&gt;&gt;&gt; decimals = pd.Series([1, 0, 2], index=[&apos;A&apos;, &apos;B&apos;, &apos;C&apos;])</span><br><span class="line">&gt;&gt;&gt; decimals</span><br><span class="line">A    1</span><br><span class="line">B    0</span><br><span class="line">C    2</span><br><span class="line">dtype: int64</span><br><span class="line">&gt;&gt;&gt; df.round(decimals)</span><br><span class="line">          A  B     C</span><br><span class="line">first   0.0  1  0.17</span><br><span class="line">second  0.0  1  0.58</span><br><span class="line">third   0.9  0  0.49</span><br></pre></td></tr></table></figure>
+<h1 id="利用python进行数据分析"><a href="#利用python进行数据分析" class="headerlink" title="利用python进行数据分析"></a>利用python进行数据分析</h1><h2 id="ch02"><a href="#ch02" class="headerlink" title="ch02"></a>ch02</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line">path = &apos;E:\PYTHON\PydataProject\ch02\data\example.txt&apos;</span><br><span class="line">a = open(path).readline()</span><br><span class="line">records = [json.loads(line) for line in open(path)]</span><br><span class="line">for index,item in enumerate(records, 1):</span><br><span class="line">    print(index, item)</span><br><span class="line">-----------------------------------------------    </span><br><span class="line">3559 &#123;&apos;a&apos;: &apos;GoogleProducer&apos;, &apos;c&apos;: &apos;US&apos;, &apos;nk&apos;: 0, &apos;tz&apos;: &apos;America/Los_Angeles&apos;, &apos;gr&apos;: &apos;CA&apos;, &apos;g&apos;: &apos;zjtI4X&apos;, &apos;h&apos;: &apos;zjtI4X&apos;, &apos;l&apos;: &apos;bitly&apos;, &apos;hh&apos;: &apos;1.usa.gov&apos;, &apos;r&apos;: &apos;direct&apos;, &apos;u&apos;: &apos;http://www.ahrq.gov/qual/qitoolkit/&apos;, &apos;t&apos;: 1331926847, &apos;hc&apos;: 1327528527, &apos;cy&apos;: &apos;Mountain View&apos;, &apos;ll&apos;: [37.419201, -122.057404]&#125;</span><br><span class="line">3560 &#123;&apos;a&apos;: &apos;Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; MS-RTC LM 8; .NET4.0C; .NET4.0E; .NET CLR 1.1.4322)&apos;, &apos;c&apos;: &apos;US&apos;, &apos;nk&apos;: 0, &apos;tz&apos;: &apos;America/New_York&apos;, &apos;gr&apos;: &apos;VA&apos;, &apos;g&apos;: &apos;qxKrTK&apos;, &apos;h&apos;: &apos;qxKrTK&apos;, &apos;l&apos;: &apos;bitly&apos;, &apos;al&apos;: &apos;en-US&apos;, &apos;hh&apos;: &apos;1.usa.gov&apos;, &apos;r&apos;: &apos;http://t.co/OEEEvwjU&apos;, &apos;u&apos;: &apos;http://herndon-va.gov/Content/public_safety/Public_Information/weekly_reports.aspx?cnlid=1736&apos;, &apos;t&apos;: 1331926849, &apos;hc&apos;: 1312897670, &apos;cy&apos;: &apos;Mc Lean&apos;, &apos;ll&apos;: [38.935799, -77.162102]&#125;</span><br><span class="line">    </span><br><span class="line">records[:1]</span><br><span class="line">Out[8]: </span><br><span class="line">[&#123;&apos;a&apos;: &apos;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.78 Safari/535.11&apos;,</span><br><span class="line">  &apos;al&apos;: &apos;en-US,en;q=0.8&apos;,</span><br><span class="line">  &apos;c&apos;: &apos;US&apos;,</span><br><span class="line">  &apos;cy&apos;: &apos;Danvers&apos;,</span><br><span class="line">  &apos;g&apos;: &apos;A6qOVH&apos;,</span><br><span class="line">  &apos;gr&apos;: &apos;MA&apos;,</span><br><span class="line">  &apos;h&apos;: &apos;wfLQtf&apos;,</span><br><span class="line">  &apos;hc&apos;: 1331822918,</span><br><span class="line">  &apos;hh&apos;: &apos;1.usa.gov&apos;,</span><br><span class="line">  &apos;l&apos;: &apos;orofrog&apos;,</span><br><span class="line">  &apos;ll&apos;: [42.576698, -70.954903],</span><br><span class="line">  &apos;nk&apos;: 1,</span><br><span class="line">  &apos;r&apos;: &apos;http://www.facebook.com/l/7AQEFzjSi/1.usa.gov/wfLQtf&apos;,</span><br><span class="line">  &apos;t&apos;: 1331923247,</span><br><span class="line">  &apos;tz&apos;: &apos;America/New_York&apos;,</span><br><span class="line">  &apos;u&apos;: &apos;http://www.ncbi.nlm.nih.gov/pubmed/22415991&apos;&#125;]</span><br></pre></td></tr></table></figure>
+<h3 id="列表推导式，后加-if-判断字段是否存在"><a href="#列表推导式，后加-if-判断字段是否存在" class="headerlink" title="列表推导式，后加 if 判断字段是否存在"></a>列表推导式，后加 if 判断字段是否存在</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">time_zones = [rec[&apos;tz&apos;] for rec in records if &apos;tz&apos; in rec]</span><br><span class="line"></span><br><span class="line">time_zones[:5]</span><br><span class="line">Out[6]: </span><br><span class="line">[&apos;America/New_York&apos;,</span><br><span class="line"> &apos;America/Denver&apos;,</span><br><span class="line"> &apos;America/New_York&apos;,</span><br><span class="line"> &apos;America/Sao_Paulo&apos;,</span><br><span class="line"> &apos;America/New_York&apos;]</span><br></pre></td></tr></table></figure>
+<h3 id="对时区计数——pandas库"><a href="#对时区计数——pandas库" class="headerlink" title="对时区计数——pandas库"></a>对时区计数——pandas库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">from collections import defaultdict</span><br><span class="line">def get_counts(sequence):</span><br><span class="line">    counts = defaultdict(int)</span><br><span class="line">    for x in sequence:</span><br><span class="line">        counts[x] +=1</span><br><span class="line">    return counts</span><br><span class="line"></span><br><span class="line">counts = get_counts(time_zones)</span><br><span class="line">num = counts[&apos;America/Los_Angeles&apos;]</span><br><span class="line"></span><br><span class="line">counts</span><br><span class="line">Out[11]: </span><br><span class="line">defaultdict(int,</span><br><span class="line">            &#123;&apos;&apos;: 521,</span><br><span class="line">             &apos;Africa/Cairo&apos;: 3,</span><br><span class="line">             &apos;Africa/Casablanca&apos;: 1,</span><br><span class="line">             &apos;Africa/Ceuta&apos;: 2,</span><br><span class="line">             &apos;Africa/Johannesburg&apos;: 1,</span><br><span class="line">             &apos;Africa/Lusaka&apos;: 1,</span><br><span class="line">             &apos;America/Anchorage&apos;: 5,</span><br><span class="line">             &apos;America/Argentina/Buenos_Aires&apos;: 1</span><br><span class="line">             ……&#125;)</span><br><span class="line">             </span><br><span class="line">num</span><br><span class="line">Out[14]: 382</span><br></pre></td></tr></table></figure>
+<h3 id="前十位的时区及其计数"><a href="#前十位的时区及其计数" class="headerlink" title="前十位的时区及其计数"></a>前十位的时区及其计数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">def top_counts(count_dict,n=10):</span><br><span class="line">    value_key_pairs = [(count,tz) for tz,count in count_dict.items()]</span><br><span class="line">    value_key_pairs.sort()</span><br><span class="line">    return value_key_pairs[-n:]</span><br><span class="line">top_counts(counts)</span><br><span class="line"></span><br><span class="line">----------------------------------------------</span><br><span class="line">top_counts(counts)</span><br><span class="line">Out[25]: </span><br><span class="line">[(33, &apos;America/Sao_Paulo&apos;),</span><br><span class="line"> (35, &apos;Europe/Madrid&apos;),</span><br><span class="line"> (36, &apos;Pacific/Honolulu&apos;),</span><br><span class="line"> (37, &apos;Asia/Tokyo&apos;),</span><br><span class="line"> (74, &apos;Europe/London&apos;),</span><br><span class="line"> (191, &apos;America/Denver&apos;),</span><br><span class="line"> (382, &apos;America/Los_Angeles&apos;),</span><br><span class="line"> (400, &apos;America/Chicago&apos;),</span><br><span class="line"> (521, &apos;&apos;),</span><br><span class="line"> (1251, &apos;America/New_York&apos;)]</span><br></pre></td></tr></table></figure>
+<h3 id="使用collections-Counter类计数更加方便"><a href="#使用collections-Counter类计数更加方便" class="headerlink" title="使用collections.Counter类计数更加方便"></a>使用collections.Counter类计数更加方便</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">from collections import Counter</span><br><span class="line">counts = Counter(time_zones)</span><br><span class="line">counts.most_common(10)</span><br><span class="line"></span><br><span class="line">------------------------------------------</span><br><span class="line">counts.most_common(10)</span><br><span class="line">Out[26]: </span><br><span class="line">[(&apos;America/New_York&apos;, 1251),</span><br><span class="line"> (&apos;&apos;, 521),</span><br><span class="line"> (&apos;America/Chicago&apos;, 400),</span><br><span class="line"> (&apos;America/Los_Angeles&apos;, 382),</span><br><span class="line"> (&apos;America/Denver&apos;, 191),</span><br><span class="line"> (&apos;Europe/London&apos;, 74),</span><br><span class="line"> (&apos;Asia/Tokyo&apos;, 37),</span><br><span class="line"> (&apos;Pacific/Honolulu&apos;, 36),</span><br><span class="line"> (&apos;Europe/Madrid&apos;, 35),</span><br><span class="line"> (&apos;America/Sao_Paulo&apos;, 33)]</span><br></pre></td></tr></table></figure>
+<h3 id="用pandas对时区进行计数"><a href="#用pandas对时区进行计数" class="headerlink" title="用pandas对时区进行计数"></a>用pandas对时区进行计数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from pandas import DataFrame,Series</span><br><span class="line">import pandas as pd</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">frame = DataFrame(records)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>frame[‘tz’]返回的Series对象，该对象有一个</li>
+<li>value_counts方法</li>
+<li>Series对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">frame[&apos;tz&apos;][:10]</span><br><span class="line">tz_count = frame[&apos;tz&apos;].value_counts()</span><br><span class="line">tz_count[:10]</span><br><span class="line"></span><br><span class="line">--------------------------------------</span><br><span class="line">tz_count[:10]</span><br><span class="line">Out[24]: </span><br><span class="line">America/New_York       1251</span><br><span class="line">                        521</span><br><span class="line">America/Chicago         400</span><br><span class="line">America/Los_Angeles     382</span><br><span class="line">America/Denver          191</span><br><span class="line">Europe/London            74</span><br><span class="line">Asia/Tokyo               37</span><br><span class="line">Pacific/Honolulu         36</span><br><span class="line">Europe/Madrid            35</span><br><span class="line">America/Sao_Paulo        33</span><br><span class="line">Name: tz, dtype: int64</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="matplotlib数据可视化"><a href="#matplotlib数据可视化" class="headerlink" title="matplotlib数据可视化"></a>matplotlib数据可视化</h3><ul>
+<li>先处理记录中未知或缺失的时区填上一个替代值</li>
+</ul>
+<p><strong>fillna函数可以替代缺失值NA，未知值（空字符串）则可以通过布尔型数组索引加以替换</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tz_count[:10].plot(kind=&apos;barh&apos;,rot = 0)</span><br></pre></td></tr></table></figure>
+<p><img src="https://note.youdao.com/yws/public/resource/e483d672502d54e37ef43c44059eb344/xmlnote/BA41B07624CB4BBEA5EEA347130F5536/3610" alt="image"></p>
+<ul>
+<li>split()</li>
+<li><p>dropna()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">results = Series(x.split()[0] for x in frame.a.dropna()) </span><br><span class="line">results[:5] </span><br><span class="line">results.value_counts()[:8]</span><br><span class="line">Out[20]: </span><br><span class="line">Mozilla/5.0                 2594</span><br><span class="line">Mozilla/4.0                  601</span><br><span class="line">GoogleMaps/RochesterNY       121</span><br><span class="line">Opera/9.80                    34</span><br><span class="line">TEST_INTERNET_AGENT           24</span><br><span class="line">GoogleProducer                21</span><br><span class="line">Mozilla/6.0                    5</span><br><span class="line">BlackBerry8520/5.0.0.681       4</span><br><span class="line">dtype: int64</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cframe = frame[frame.a.notnull()]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cframe = frame[frame.a.notnull()]</span><br><span class="line">operating_system =np.where(cframe[&apos;a&apos;].str.contains(&apos;Windows&apos;),&apos;Windows&apos;,&apos;Not Windows&apos;)</span><br><span class="line">operating_system[:5]</span><br><span class="line">by_tz_os = cframe.groupby([&apos;tz&apos;,operating_system])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>size()</p>
+</li>
+<li>unstack()</li>
+<li>对分组结果进行计数，并利用unstack对计数结果进行重塑<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">agg_counts = by_tz_os.size().unstack().fillna(0)</span><br><span class="line"></span><br><span class="line">agg_counts</span><br><span class="line">Out[19]: </span><br><span class="line">                                Not Windows  Windows</span><br><span class="line">tz                                                  </span><br><span class="line">                                      245.0    276.0</span><br><span class="line">Africa/Cairo                            0.0      3.0</span><br><span class="line">Africa/Casablanca                       0.0      1.0</span><br><span class="line">Africa/Ceuta                            0.0      2.0</span><br><span class="line">Africa/Johannesburg                     0.0      1.0</span><br><span class="line">Africa/Lusaka                           0.0      1.0</span><br><span class="line">America/Anchorage                       4.0      1.0</span><br><span class="line">America/Argentina/Buenos_Aires          1.0      0.0</span><br><span class="line">America/Argentina/Cordoba               0.0      1.0</span><br><span class="line">America/Argentina/Mendoza               0.0      1.0</span><br><span class="line">America/Bogota                          1.0      2.0</span><br><span class="line">America/Caracas                         0.0      1.0</span><br><span class="line">America/Chicago                       115.0    285.0</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/05/31/Python函数使用/">Python函数使用</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Yue Dandy 的个人博客">Yue Dandy</a></p>
+        <p><span>发布时间:</span>2018年05月31日 - 17时20分</p>
+        <p><span>最后更新:</span>2018年06月01日 - 05时49分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/05/31/Python函数使用/" title="Python函数使用">http://github.com/lzxyzq/2018/05/31/Python函数使用/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://github.com/lzxyzq/2018/05/31/Python函数使用/　　作者: Yue Dandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2018/05/31/Python文件读取/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Python文件读取
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#enumerate-使用"><span class="toc-number">1.</span> <span class="toc-text">enumerate()使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#stack-和-unstack-的用法"><span class="toc-number">2.</span> <span class="toc-text">stack() 和 unstack()的用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#drop-duplicates-函数去重"><span class="toc-number">3.</span> <span class="toc-text">drop_duplicates() 函数去重</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#过滤"><span class="toc-number">4.</span> <span class="toc-text">过滤</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#浮点小数位数处理"><span class="toc-number">5.</span> <span class="toc-text">浮点小数位数处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#利用python进行数据分析"><span class="toc-number">6.</span> <span class="toc-text">利用python进行数据分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ch02"><span class="toc-number">6.1.</span> <span class="toc-text">ch02</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#列表推导式，后加-if-判断字段是否存在"><span class="toc-number">6.1.1.</span> <span class="toc-text">列表推导式，后加 if 判断字段是否存在</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对时区计数——pandas库"><span class="toc-number">6.1.2.</span> <span class="toc-text">对时区计数——pandas库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前十位的时区及其计数"><span class="toc-number">6.1.3.</span> <span class="toc-text">前十位的时区及其计数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用collections-Counter类计数更加方便"><span class="toc-number">6.1.4.</span> <span class="toc-text">使用collections.Counter类计数更加方便</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用pandas对时区进行计数"><span class="toc-number">6.1.5.</span> <span class="toc-text">用pandas对时区进行计数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#matplotlib数据可视化"><span class="toc-number">6.1.6.</span> <span class="toc-text">matplotlib数据可视化</span></a></li></ol></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2018/05/31/Python函数使用/" data-title="Python函数使用" data-url="http://github.com/lzxyzq/2018/05/31/Python函数使用/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lzxyzq"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/05/31/Python文件读取/" title="上一篇: Python文件读取">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/06/13/An-Introduction-of-Statistical-Learning/">An Introduction of Statistical Learning</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/25/Principle_of_Operating_System/">操作系统原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/03/book_python_practice_of_data_analysis_and_mining/">python数据分析与挖掘实战——张良均</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/29/线性回归/">Logistic Regression, LDA QDA and KNN</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/25/用数据讲故事/">Storytelling with Data</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/24/计算机网络/">计算机网络</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/17/利用python进行数据分析/">Python for Data Analysis</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/24/精益数据分析/">精益数据分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/02/从Excel到Python——数据分析/">From Excel to Python——Data Analysis</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/31/Python文件读取/">Python文件读取</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/31/Python函数使用/">Python函数使用</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+
+
+   <div id="lv-container" data-id="city" data-uid="MTAyMC80MTczOS8xODI4NQ==">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+   </div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2021 Yue Dandy
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank"></a>Created
+                <a href="https://github.com/lzxyzq/hexo-theme-spfk" target="_blank"></a> by lzxyzq
+            </div>
+        </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>
